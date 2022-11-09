@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <!--HEADER-->
+    <%- include('./partials/head') %>
+        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+<body>
+    <div class="back">
+        <div class="principal-box">
+            <div class="header">
+                <h1>Criar uma conta</h1>
+            </div>
+            
+
+            <!--Formulário aponta para a rota de cadastro utilizando o método POST-->
+            <form id="form" class="form" action="/cadastro" method="POST">
+                
+                <div class="dados">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" placeholder="email" name="email">
+                    <span class="input-form"></span>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <div class="dados">
+                    <label for="username">Nome de usuário</label>
+                    <input type="text" id="name" placeholder="nome" name="name">
+                    <span class="input-form"></span>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <div class="dados">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" placeholder="senha" name="senha">
+                    <span class="input-form"></span>
+                    <small id="password-msg">Mensagem de erro</small>
+                </div>
+
+                <div class="dados">
+                    <label for="password">Confirmar Senha</label>
+                    <input type="password" id="password-confirmation" placeholder="confirme sua senha" name="password-confirmation">
+                    <span class="input-form"></span>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <div class="sign-up">
+                    <button type="submit">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+<script src="../javascripts/signUp.js"></script>
+</body>
+
+
+
+
+
+
+
+</html>
