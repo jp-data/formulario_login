@@ -5,8 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style-private.css">
 </head>
 <body>
     <h1>Bem vindo a área restrita</h1>
+    <div class="background">
+        <div class="profile">
+            <h1>Seu perfil</h1>
+        </div>
+        
+        <div class="user-list">
+            <h1>Lista de usuários</h1>
+            <% users.map(user=> { %> 
+            <ol>
+                <li><%= user.email %></li>
+            </ol>
+        </div>
+        <% }) %>
+    </div>
+    
+    
 </body>
 </html>

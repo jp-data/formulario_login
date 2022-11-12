@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const {User} = require('../database/models')
+const { User } = require('../database/models')
 
 const authController = {
     renderLogin: (req, res) => {
@@ -8,7 +8,7 @@ const authController = {
             return res.redirect('/restrito')
         }
 
-        return res.render('login', { error: null});
+        return res.render('login', { error: null });
     },
 
     //validação de login
@@ -24,7 +24,7 @@ const authController = {
             if (!usuario) {
                 // console.log("usuário não encontrado")
                 //se não existir, renderiza a página de login
-                return res.render('login', { error: "Email ou senhá inválidos"});
+                return res.render('login', { error: "Email ou senhá inválidos" });
             }
 
             //validação da senha
@@ -33,12 +33,12 @@ const authController = {
             if (!senhaValida) {
                 // console.log("usuário não encontrado")
                 //se não existir, renderiza a página de login
-                return res.render('login', { error: "Email ou senha inválidos"});
+                return res.render('login', { error: "Email ou senha inválidos" });
             }
 
             //SE os dois estiverem ok, cria uma sessão para o usuário
             //Salvando o email e o id do usuário na sessão
-            req.session.user = { email: usuario.email, id: usuario.id_usuario}
+            req.session.user = { email: usuario.email, id: usuario.id_usuario }
 
             //leva o usuário para a página restrita
             return res.redirect('/restrito')
@@ -48,11 +48,20 @@ const authController = {
         }
     },
 
-    privateArea: (req, res) => {
-        //busca o usuário na sessão
-        const user = req.session.user
-        //Renderiza a página restrita com os dados do usuário logado
-        return res.render('areaRestrita')
+    privateArea: async (req, res) => {
+        try {
+            //busca o usuário na sessão
+            const user = req.session.user
+            //traz os usuários do banco de dados
+            const users = await User.findAll()
+            //Renderiza a página restrita que contém a lista de usuários cadastrados
+            res.render('areaRestrita', { users })
+
+        } catch (error) {
+            console.log(error)
+        }
+
+        
     }
 }
 
