@@ -17,17 +17,24 @@ const userController = {
         const passwordToString = senha.toString() 
         //criptografia da senha
         const hash = bcrypt.hashSync(passwordToString, saltRounds);
-        //chama a model para criar um novo usuário
-        //passando email e a senha criptografada
-        await User.create({ 
-            email: email,
-            nome: name, 
-            senha: hash 
-        })
-
-        //redireciona
-        res.redirect('/login')
-    }
+        //verificação do email
+        const usuario = await User.findOne({ where: { email: email } });
+        if (usuario) {
+            // Se não existir, renderiza a página de login com erro
+            res.render("formCadastro", { error: "Email já cadastrado" });
+          
+          } else {
+            await User.create({ 
+                email: email,
+                nome: name, 
+                senha: hash 
+            })
+    
+            //redireciona
+            res.redirect('/login')
+        }
+          }
+    
 }
 
 module.exports = userController;
