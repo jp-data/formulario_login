@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const { User } = require('../database/models')
+const { User } = require('../../database/models')
 
 const authController = {
     renderLogin: (req, res) => {
@@ -19,7 +19,6 @@ const authController = {
 
             //busca o email informado no banco de dados
             const usuario = await User.findOne({ where: { email: email } });
-
             //Verifica se o usuário existe
             if (!usuario) {
                 // console.log("usuário não encontrado")
@@ -55,7 +54,7 @@ const authController = {
             //traz os usuários do banco de dados
             const users = await User.findAll()
             //Renderiza a página restrita que contém a lista de usuários cadastrados
-            res.render('areaRestrita', { users })
+            res.render('areaRestrita', { user, users })
 
         } catch (error) {
             console.log(error)

@@ -7,14 +7,15 @@ const logger = require('morgan');
 
 
 //rotas
-const publicRouter = require('./routes/public.routes')
-const privateRouter = require('./routes/private.routes')
+const publicRouter = require('./src/routes/public.routes')
+const privateRouter = require('./src/routes/private.routes')
+const userAuthenticated = require('./src/middlewares/userAuthenticated')
 
 const app = express();
 
 // view engine setup
 app.set('view engine', 'ejs');
-app.set('views', './views');
+app.set('views', './src/views');
 
 
 
@@ -36,6 +37,9 @@ app.use(session({
 }));
 
 app.use('/', publicRouter);
+
+//utilizando o middleware para restringi o acesso a rota private
+app.use(userAuthenticated)
 app.use('/', privateRouter)
 
 app.listen(3000, () => {

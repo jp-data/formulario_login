@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-const { User } = require('../database/models')
+const { User } = require('../../database/models')
 
 const userController = {
 
@@ -16,26 +16,27 @@ const userController = {
         //verificação do email     
         const users = await User.findOne({ where: { email: email } });
         //senha - criptografia
-       
-         //verificação do email 
-        if(users) {
-            return res.render('formCadastro', {error: 'Email já cadastrado'})
-        } else {
-            const passwordToString = senha.toString()
-            const hash = bcrypt.hashSync(passwordToString, saltRounds);
-            await User.create({
-                email: email,
-                nome: name,
-                senha: hash
-            })
 
-            return res.redirect('/login')
+        //verificação do email 
+        if (users) {
+            return res.render('formCadastro', { error: 'Email já cadastrado' })
         }
+
+        const passwordToString = senha.toString()
+        const hash = bcrypt.hashSync(passwordToString, saltRounds);
         
+        await User.create({
+            email: email,
+            nome: name,
+            senha: hash
+        })
+
+        return res.redirect('/login')
+
 
         //redireciona
-        
-     }
+
+    }
 
 }
 
