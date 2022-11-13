@@ -10,8 +10,6 @@
             <div class="header">
                 <h1>Criar uma conta</h1>
             </div>
-            
-
             <!--Formulário aponta para a rota de cadastro utilizando o método POST-->
             <form id="form" class="form" action="/cadastro" method="POST">
                 
@@ -20,6 +18,7 @@
                     <input type="text" id="email" placeholder="email" name="email">
                     <span class="input-form"></span>
                     <small>Mensagem de erro</small>
+                    <p style="color: red"><%= error ? error : '' %></p>
                 </div>
                 
                 <div class="dados">

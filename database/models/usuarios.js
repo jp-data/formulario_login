@@ -7,9 +7,9 @@ module.exports = (sequelize, DataType) => {
             primaryKey: true,
             autoIncremente: true
         },
-        email: DataType.STRING,
+        email:  DataType.STRING,
         senha: DataType.STRING
-    },{
+    }, {
         tableName: 'usuarios',
         timestamps: false
     })
