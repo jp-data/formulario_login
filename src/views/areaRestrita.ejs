@@ -8,7 +8,13 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/style-private.css">
 </head>
 <body>
-    <h1>Bem vindo a área restrita</h1>
+    <header>
+        <h1>Bem vindo a área restrita</h1>
+        <form id="logout" action="/logout" method="POST">
+            <button>Fazer Logout</button>
+        </form>
+    </header>
+    
     <div class="background">
         <div class="profile">
             <h1>Seu perfil</h1>
@@ -22,9 +28,7 @@
             </ol>
             <% }) %>
         </div>
-        
     </div>
-    
     
 </body>
 </html>

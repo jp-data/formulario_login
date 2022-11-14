@@ -3,15 +3,28 @@ body {
     background: linear-gradient(to right, rgba(205, 218, 161, 0.973), rgba(212, 218, 58, 0.8));
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+header h1, form {
+    width: 50%;
+}
+
 .background {
     width: 90%;
     max-width: 90%;
     height: 90vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .profile, .user-list {
     width: 50%;
     height: 80vh;
+}
+
+#logout {
+    align-self: center
 }

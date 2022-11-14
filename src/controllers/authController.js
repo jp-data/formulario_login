@@ -61,6 +61,13 @@ const authController = {
         }
 
         
+    },
+
+    logout: async (req, res) => {
+        //destroi a sessão
+        req.session.destroy()
+        //redireciona para pág de login
+        return res.redirect('/login')
     }
 }
 
