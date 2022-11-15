@@ -18,13 +18,17 @@
     <div class="background">
         <div class="profile">
             <h1>Seu perfil</h1>
+            <ul>
+                <li>Nome: <%=userLogin.nome%></li>
+                <li>Email: <%=userLogin.email%></li>
+            </ul>
         </div>
         
         <div class="user-list">
             <h1>Lista de usuários</h1>
-            <% users.map(user=> { %> 
+            <% users.map(userList=> { %> 
             <ol>
-                <li><%= user.email %></li>
+                <li><%= userList.email %></li>
             </ol>
             <% }) %>
         </div>

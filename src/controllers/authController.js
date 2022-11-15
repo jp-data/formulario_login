@@ -51,10 +51,12 @@ const authController = {
         try {
             //busca o usuário na sessão
             const user = req.session.user
+            //const para ficha de usuário
+            const userLogin = await User.findOne({ where: {email: user.email}})
             //traz os usuários do banco de dados
             const users = await User.findAll()
             //Renderiza a página restrita que contém a lista de usuários cadastrados
-            res.render('areaRestrita', { user, users })
+            res.render('areaRestrita', { user, users, userLogin })
 
         } catch (error) {
             console.log(error)

@@ -8,7 +8,8 @@ module.exports = (sequelize, DataType) => {
             autoIncremente: true
         },
         email:  DataType.STRING,
-        senha: DataType.STRING
+        senha: DataType.STRING,
+        nome: DataType.STRING
     }, {
         tableName: 'usuarios',
         timestamps: false
