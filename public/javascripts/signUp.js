@@ -27,6 +27,7 @@ function checkInputs() {
     //email
     if (!emailValue.includes('@') || emailValue === "") {
         setErrorFor(email, "Email inválido")
+        return false
 
     } else {
         setSuccesFor(email)
@@ -34,6 +35,7 @@ function checkInputs() {
     //nome
     if (usernameValue === "") {
         setErrorFor(nameInput, "Nome é obrigatório")
+        return false
 
     } else {
         setSuccesFor(nameInput)
@@ -41,20 +43,23 @@ function checkInputs() {
     //senhas
     if (passwordValue == "") {
         setErrorFor(password, "Senha é obrigatório")
+        return false
 
     } else if (passwordConfirmationValue == "") {
         setErrorFor(passwordConfirmation, "Confirmação de senha é obrigatório")
+        return false
 
     } else if (passwordValue !== passwordConfirmationValue) {
         setErrorFor(password, "Senhas não conferem")
         setErrorFor(passwordConfirmation, "Senhas não conferem")
         return false
+        
     } else {
         setSuccesFor(password)
         setSuccesFor(passwordConfirmation)
-        return true
+        
     }
-    
+    return true
 }
 
 
