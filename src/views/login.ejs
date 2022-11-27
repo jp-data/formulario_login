@@ -2,24 +2,24 @@
 
 <head>
     <%- include('./partials/head') %>
-        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/login.css">
 </head>
 
 <body>
     <div class="principal-box">
 
         <h1>Login</h1>
-        <form action="/session" method="POST" id="form-login">
-            <div class="dados-login">
-                <label for="email">Email:</label>
-                <input type="text" id="email-login" placeholder="email" name="email" required>
+        <form action="/session" method="POST" class="form" id="form">
+            <div class="dados">
+                <input type="text" id="email" placeholder="Email" name="email" required>
             </div>
-            <div class="dados-login">
-                <label for="password">Senha:</label>
-                <input type="password" id="password-login" placeholder="senha" name="senha" required>
+            <div class="dados">
+                <input type="password" id="password" placeholder="Senha" name="senha" required>
             </div>
             <div class="login-confirm">
                 <button type="submit">Fazer Login</button>
+                <p>Ou</p>
+                <a href="/sign-up">Cadastre-se</a>
             </div>
         </form>
     </div>
