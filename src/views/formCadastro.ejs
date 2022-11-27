@@ -14,31 +14,24 @@
             <form id="form" class="form" action="/cadastro" method="POST">
                 
                 <div class="dados">
-                    <label for="email">Email</label>
-                    <input type="text" id="email" placeholder="email" name="email">
-                    <span class="input-form"></span>
+                    <!-- <label for="email">Email</label> -->
+                    <input type="text" id="email" placeholder="Email" name="email">
                     <small>Mensagem de erro</small>
                     <p style="color: red"><%= error ? error : '' %></p>
                 </div>
                 
                 <div class="dados">
-                    <label for="username">Nome de usuário</label>
-                    <input type="text" id="name" placeholder="nome" name="name">
-                    <span class="input-form"></span>
+                    <input type="text" id="name" placeholder="Nome" name="name">
                     <small>Mensagem de erro</small>
                 </div>
                 
                 <div class="dados">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" placeholder="senha" name="senha">
-                    <span class="input-form"></span>
+                    <input type="password" id="password" placeholder="Senha" name="senha">
                     <small id="password-msg">Mensagem de erro</small>
                 </div>
 
                 <div class="dados">
-                    <label for="password">Confirmar Senha</label>
-                    <input type="password" id="password-confirmation" placeholder="confirme sua senha" name="password-confirmation">
-                    <span class="input-form"></span>
+                    <input type="password" id="password-confirmation" placeholder="Confirme sua senha" name="password-confirmation">
                     <small>Mensagem de erro</small>
                 </div>
                 

@@ -44,17 +44,16 @@ body {
     border: 2px solid rgba(153, 135, 135, 0.171);
     width: 360px;
     max-width: 95%;
-    height: 5vh;
+    height: 6vh;
     padding: 10px;
-}
-
-.dados label {
-    font-size: 18px;
-    margin-left: 5px;
+    font-size: 15px;
+    margin-bottom: 5px;
 }
 
 .dados small {
     visibility: hidden;
+    padding-left: 6px;
+    font-size: 12px;
 }
 
 
@@ -89,8 +88,10 @@ body {
 }
 
 .sign-up button {
-    width: 40%
+    width: 40%;
+    height: 4vh;
 }
+
 /* PÁG LOGIN */
 
 .principal-box h1 {
