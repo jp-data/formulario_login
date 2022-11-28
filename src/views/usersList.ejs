@@ -9,21 +9,20 @@
 </head>
 <body>
     <header>
-        <h1>Bem vindo a área restrita</h1>
         <form id="logout" action="/logout" method="POST">
             <button>Fazer Logout</button>
         </form>
     </header>
     
     <div class="background">
-        <div class="profile">
-            <h1>Seu perfil</h1>
-            <ul>
-                <li>Nome: <%=userLogin.nome%></li>
-                <li>Email: <%=userLogin.email%></li>
-            </ul>
+        <div class="user-list">
+            <h1>Lista de usuários</h1>
+            <% users.map(userList=> { %> 
+            <ol>
+                <li><%= userList.email %></li>
+            </ol>
+            <% }) %>
         </div>
-        <a href="/users">Lista de usuários</a>
     </div>
     
 </body>

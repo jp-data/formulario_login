@@ -70,6 +70,18 @@ const authController = {
         req.session.destroy()
         //redireciona para pág de login
         return res.redirect('/login')
+    },
+
+    usersList: async (req, res) => {
+        try {
+        //busca o usuário na sessão
+            const user = req.session.user
+            const users = await User.findAll()
+            res.render('usersList', { user, users})
+        } catch(error) {
+            console.log(error)
+        }
+        
     }
 }
 

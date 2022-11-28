@@ -6,6 +6,8 @@ const authController = require('../controllers/authController');
 
 //renderiza a página restrita
 router.get('/restrito', authController.privateArea);
+//renderiza a lista de usuários
+router.get('/users', authController.usersList);
 
 //logout
 router.post('/logout', authController.logout);
