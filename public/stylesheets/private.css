@@ -21,10 +21,17 @@ header h1, form {
 }
 
 .profile, .user-list {
-    width: 50%;
+    width: 80%;
     height: 80vh;
 }
 
 #logout {
     align-self: center
+}
+
+.perfil-card {
+    background-color: white;
+    height: 50vh;
+    border-radius: 10px;
+    width: 30%;
 }

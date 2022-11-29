@@ -9,20 +9,25 @@
 </head>
 <body>
     <header>
-        <h1>Bem vindo a área restrita</h1>
-        <form id="logout" action="/logout" method="POST">
-            <button>Fazer Logout</button>
-        </form>
+        
     </header>
     
     <div class="background">
         <div class="profile">
             <h1>Seu perfil</h1>
-            <ul>
-                <li>Nome: <%=userLogin.nome%></li>
-                <li>Email: <%=userLogin.email%></li>
-            </ul>
+            <div class="perfil-card">
+                <ul>
+                    <li>Nome: <%=userLogin.nome%></li>
+                    <li>Email: <%=userLogin.email%></li>
+                </ul>
+            </div>
+            
         </div>
+
+        <form id="logout" action="/logout" method="POST">
+            <button>Fazer Logout</button>
+        </form>
+        
         <a href="/users">Lista de usuários</a>
     </div>
     
