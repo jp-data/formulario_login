@@ -5,7 +5,7 @@ const authController = require('../controllers/authController');
 
 
 //página de cadastro
-router.get('/sign-up', userController.renderFormCadastro);
+router.get('/', userController.renderFormCadastro);
 //rota para cadastrar o usuário
 router.post('/cadastro', userController.cadastro);
 
