@@ -25,13 +25,31 @@ header h1, form {
     height: 80vh;
 }
 
+.background h1 {
+    text-align: center;
+}
+
 #logout {
     align-self: center
 }
 
-.perfil-card {
+.perfil-card-photo {
     background-color: white;
     height: 50vh;
     border-radius: 10px;
-    width: 30%;
+    max-width: 30%;
+}
+
+.perfil-card-datas {
+    background-color: white;
+    height: 50vh;
+    border-radius: 10px;
+    max-width: 30%;
+}
+
+.perfil-card-resume {
+    background-color: white;
+    height: 50vh;
+    border-radius: 10px;
+    max-width: 30%;
 }
