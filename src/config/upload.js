@@ -12,8 +12,10 @@ module.exports = {
         destination: ( request, file, callback ) => {
             callback( null, uploadPath )
         },
+        //trocando o nome do arquivo para evitar duplicidade 
         filename: ( request, file, callback ) => {
-            const filename = 
+            const fileName = `${v4()}-${file.originalname}`; 
+            callback( null, fileName);
 
         }
     })

@@ -2,7 +2,12 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
+const multer = require('multer');
+const { storage } = require('../config/upload');
 
+
+//inicialização do multer com as configurações do storage
+const upload = multer({ storage })
 
 //renderiza a página restrita
 router.get('/restrito', authController.privateArea);
@@ -11,5 +16,9 @@ router.get('/users', authController.usersList);
 
 //logout
 router.post('/logout', authController.logout);
+
+//rota para upload de foto
+router.post('/', upload.single('image-perfil'), userController.upload);
+
 
 module.exports = router

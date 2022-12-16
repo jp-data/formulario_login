@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-const { User } = require('../../database/models')
+const { User } = require('../../database/models');
 
 const userController = {
 
@@ -24,7 +24,7 @@ const userController = {
 
         const passwordToString = senha.toString()
         const hash = bcrypt.hashSync(passwordToString, saltRounds);
-        
+
         await User.create({
             email: email,
             nome: name,
@@ -32,10 +32,22 @@ const userController = {
         })
 
         return res.redirect('/login')
+    },
 
+    //upload de foto 
+    upload: async (req, res) => {
+        try {
+            const avatar = req.file.fileName;
+            const user = req.session.user;
+            const userLogin = await User.findOne({ where: { email: user.email } })
+            await User.update({ foto: avatar }, {
+                where: { id_usuario: userLogin.id_usuario }
+            })
+            return res.redirect('/restrito')
 
-        //redireciona
-
+        } catch (error) {
+            console.log(error)
+        }
     }
 
 }
