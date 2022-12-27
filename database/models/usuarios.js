@@ -9,7 +9,8 @@ module.exports = (sequelize, DataType) => {
         },
         email:  DataType.STRING,
         senha: DataType.STRING,
-        nome: DataType.STRING
+        nome: DataType.STRING,
+        foto: DataType.STRING
     }, {
         tableName: 'usuarios',
         timestamps: false

@@ -16,19 +16,22 @@
         <h1>Perfil</h1>
 
         <div class="profile">
-            <div class="perfil-card-photo">
-                <h3>Terá uma foto</h3>
-                <input type="file" name="image-perfil" required>
-            </div>
-            <div class="perfil-card-datas">
-                <li>Nome: <%=userLogin.nome%></li>
-                <li>Email: <%=userLogin.email%></li>
-                <li>Idade: </li>
-            </div>
-            <div class="perfil-card-resume">
-                <h3>Alguma coisa</h3>
-            </div>
-            
+            <form action="/upload" method="POST" id="profile" enctype="multipart/form-data">
+                <div class="perfil-card-photo">
+                    <h3>Terá uma foto</h3>
+                    <input type="file" name="avatar" required>
+                    <button type="submit">Salvar foto</button>
+                </div>
+            </form>  
+                <div class="perfil-card-datas">
+                    <li>Nome: <%=userLogin.nome%></li>
+                    <li>Email: <%=userLogin.email%></li>
+                    <li>Idade: </li>
+                </div>
+                <div class="perfil-card-resume">
+                    <h3>Alguma coisa</h3>
+                </div>
+                     
         </div>
     </div>
     <form id="logout" action="/logout" method="POST">

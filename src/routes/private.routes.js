@@ -7,7 +7,7 @@ const { storage } = require('../config/upload');
 
 
 //inicialização do multer com as configurações do storage
-const upload = multer({ storage })
+const upload = multer({ storage: storage })
 
 //renderiza a página restrita
 router.get('/restrito', authController.privateArea);
@@ -18,7 +18,7 @@ router.get('/users', authController.usersList);
 router.post('/logout', authController.logout);
 
 //rota para upload de foto
-router.post('/', upload.single('image-perfil'), userController.upload);
+router.post('/upload', upload.single('avatar'), userController.upload);
 
 
 module.exports = router

@@ -37,7 +37,7 @@ const userController = {
     //upload de foto 
     upload: async (req, res) => {
         try {
-            const avatar = req.file.fileName;
+            const avatar = req.file.filename;
             const user = req.session.user;
             const userLogin = await User.findOne({ where: { email: user.email } })
             await User.update({ foto: avatar }, {

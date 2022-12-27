@@ -6,7 +6,7 @@ const uploadPath = 'public/uploads';
 
 module.exports = {
     //caminho da pasta e a propriedade
-    uploadPath : uploadPath,
+    uploadPath,
 
     storage: multer.diskStorage( {
         destination: ( request, file, callback ) => {

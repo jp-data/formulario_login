@@ -3,7 +3,7 @@ const userAuthenticated = (req, res, next) => {
     // verificando se existe a sessão
     //caso não, redireciona para login
     if (req.session.user === undefined) {
-        return res.redirect('/sign-up')
+        return res.redirect('/login')
     }
     //caso exista sessão: continua a execução do server
     next();
