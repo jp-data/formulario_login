@@ -56,3 +56,8 @@ header h1, form {
     border-radius: 10px;
     flex-grow: 0.2;
 }
+
+.avatar {
+    width: 60%;
+    height: 50vh;
+}

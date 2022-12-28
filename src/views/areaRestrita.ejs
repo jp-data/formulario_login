@@ -18,7 +18,7 @@
         <div class="profile">
             <form action="/upload" method="POST" id="profile" enctype="multipart/form-data">
                 <div class="perfil-card-photo">
-                    <h3>Terá uma foto</h3>
+                    <img class="avatar" src="/uploads/<%= userLogin.foto %>">
                     <input type="file" name="avatar" required>
                     <button type="submit">Salvar foto</button>
                 </div>
