@@ -29,6 +29,10 @@ header h1, form {
     justify-content: space-around;
 }
 
+#profile {
+    width: 30%;
+}
+
 .background h1 {
     text-align: center;
 }
@@ -46,6 +50,7 @@ header h1, form {
 
 .perfil-card-photo img {
     border-radius: 45%;
+    width: 100%;
 }
 
 .perfil-card-datas {
