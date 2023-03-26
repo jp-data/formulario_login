@@ -52,10 +52,17 @@ const userController = {
 
     selectUser: async (req, res) => {
         try {
+            const user = req.session.user
             const { id } = req.params;
             const userSelected = await User.findByPk(id);
-            res.render('usersPerfil', { userSelected }) 
-        } catch(error) {
+
+            if (userSelected.email != user.email) {
+                res.render('usersPerfil', { userSelected })
+            }
+            else {
+                res.redirect('/restrito')
+            }
+        } catch (error) {
             console.log(error)
         }
     }
