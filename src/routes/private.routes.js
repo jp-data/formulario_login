@@ -15,6 +15,8 @@ router.get('/restrito', authController.privateArea);
 router.get('/editPerfil', authController.privateAreaEdit);
 //renderiza a lista de usuários
 router.get('/users', authController.usersList);
+//renderiza o usuário clicado
+router.get('/users/:id', userController.selectUser)
 
 //logout
 router.post('/logout', authController.logout);

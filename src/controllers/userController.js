@@ -48,6 +48,16 @@ const userController = {
         } catch (error) {
             console.log(error)
         }
+    },
+
+    selectUser: async (req, res) => {
+        try {
+            const { id } = req.params;
+            const userSelected = await User.findByPk(id);
+            res.render('usersPerfil', { userSelected }) 
+        } catch(error) {
+            console.log(error)
+        }
     }
 
 }

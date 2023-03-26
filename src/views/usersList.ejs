@@ -19,7 +19,7 @@
             <h1>Lista de usuários</h1>
             <% users.map(userList=> { %> 
             <ol>
-                <li><%= userList.email %></li>
+                <a href="users/<%=userList.id_usuario%>"><li><%= userList.email %></li></a>
             </ol>
             <% }) %>
         </div>
