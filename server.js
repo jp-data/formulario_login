@@ -38,7 +38,7 @@ app.use(session({
 
 app.use('/', publicRouter);
 
-//utilizando o middleware para restringi o acesso a rota private
+//utilizando o middleware para restringir o acesso a rota private
 app.use(userAuthenticated)
 app.use('/', privateRouter)
 

@@ -56,7 +56,7 @@ const authController = {
             //traz os usuários do banco de dados
             const users = await User.findAll()
             //Renderiza a página restrita que contém a lista de usuários cadastrados
-            res.render('areaRestrita', { user, users, userLogin })
+            res.render('areaRestrita', { userLogin })
 
         } catch (error) {
             console.log(error)
