@@ -52,7 +52,7 @@ const authController = {
             //busca o usuário na sessão
             const user = req.session.user
             //const para ficha de usuário
-            const userLogin = await User.findOne({ where: {email: user.email}})
+            const userLogin = await User.findOne({ where: {email: user.email} })
             //traz os usuários do banco de dados
             const users = await User.findAll()
             //Renderiza a página restrita que contém a lista de usuários cadastrados
@@ -63,6 +63,19 @@ const authController = {
         }
 
         
+    },
+    
+    privateAreaEdit: async (req, res) => {
+        try {
+            //bsca o usuário na sessão
+            const user = req.session.user
+            //encontra no DB
+            const userLogin = await User.findOne({ where: {email: user.email} })
+            //renderiza a página com o perfil do usuário na sessão
+            res.render('editPerfil', { user, userLogin })
+        } catch (error) {
+            console.log(error)
+        }
     },
 
     logout: async (req, res) => {

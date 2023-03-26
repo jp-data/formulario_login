@@ -30,9 +30,14 @@ header h1, form {
 }
 
 #profile {
-    width: 30%;
+    width: 25%;
+    height: 50vh;
 }
 
+.perfil-card {
+    width: 25%;
+    height: 50vh;
+}
 .background h1 {
     text-align: center;
 }
@@ -49,6 +54,11 @@ header h1, form {
 }
 
 .perfil-card-photo img {
+    border-radius: 45%;
+    width: 100%;
+}
+
+.perfil-card img {
     border-radius: 45%;
     width: 100%;
 }

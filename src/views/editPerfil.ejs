@@ -13,32 +13,26 @@
     </header>
     
     <div class="background">
-        <h1>Perfil</h1>
+        <h1>Editar Perfil</h1>
 
         <div class="profile">
-            
-                <div class="perfil-card">
+            <form action="/upload" method="POST" id="profile" enctype="multipart/form-data">
+                <div class="perfil-card-photo">
                     <img class="avatar" src="/uploads/<%= userLogin.foto %>" alt="avatar">
-                    <a href="/editPerfil">Editar foto</a>
+                    <input type="file" name="avatar" required>
+                    <button type="submit">Salvar foto</button>
                 </div>
-             
+            </form>  
                 <div class="perfil-card-datas">
                     <h1><%=userLogin.nome%></h1>
                     <p>Sobre mim: Lorem ipsum dolor sit amet consectetur adipisicing elit. Et esse dicta sapiente obcaecati quibusdam quia. Ad autem officia totam voluptatem non! Velit odio fugiat perferendis doloribus, quia ut alias possimus?</p>
                     <li>Email: <%=userLogin.email%></li>
                     <li>Idade: </li>
                 </div>
-                <div class="perfil-card-resume">
-                    <h3>Lista de Usuários</h3>
-                </div>
-                     
         </div>
     </div>
     <form id="logout" action="/logout" method="POST">
         <button>Fazer Logout</button>
     </form>
-    
-    <a href="/users">Lista de usuários</a>
-    
 </body>
 </html>

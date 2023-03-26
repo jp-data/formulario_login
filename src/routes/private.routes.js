@@ -11,6 +11,8 @@ const upload = multer({ storage: storage })
 
 //renderiza a página restrita
 router.get('/restrito', authController.privateArea);
+//renderiza a página de edição de perfil
+router.get('/editPerfil', authController.privateAreaEdit);
 //renderiza a lista de usuários
 router.get('/users', authController.usersList);
 
