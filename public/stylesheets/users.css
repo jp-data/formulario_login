@@ -1,0 +1,14 @@
+body { 
+    width: 100%;
+    /* background: linear-gradient(to right, rgba(205, 218, 161, 0.973), rgba(212, 218, 58, 0.8)); */
+    background-color: red;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
