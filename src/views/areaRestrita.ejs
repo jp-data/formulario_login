@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/private.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/private.css">   
+    <link rel="stylesheet" type="text/css" href="stylesheets/header.css">                                           
 </head>
 <body>
-    <header>
-        
-    </header>
+
+    <%- include('./partials/header') %>
     
     <div class="background">
         <h1>Perfil</h1>
@@ -18,7 +18,7 @@
         <div class="profile">
             
                 <div class="perfil-card">
-                    <img class="avatar" src="/uploads/<%= userLogin.foto %>" alt="avatar">
+                    <img class="avatar" src="/uploads/<%= userLogin.foto %>" alt="avatar-padrao">
                     <a href="/editPerfil">Editar foto</a>
                 </div>
              
