@@ -1,21 +1,61 @@
-.principal {
-    width: 80%;
-    border: 1px solid;
+* {
+    font-family: Poppins-Regular;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #778899;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar {
+    min-height: 70px;
     display: flex;
-    flex-direction: row;
-    
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 34px;
 }
 
-#initial , #users-list-icon , #places-list-icon  {
-    justify-content: start;
-    width: 20%;
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-#initial p, #users-list-icon p, #places-list-icon p {
-    border: 1px solid; 
-    width: 100%;
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 60px;
 }
 
-#initial  {
-    
+.nav-link {
+    transition: 0.5s ease;
+}
+
+.nav-link:hover {
+    color: #FFE4E1;
+}
+
+.hamburguer {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-raidius: 2px;
+    margin: 5px auto;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
 }
