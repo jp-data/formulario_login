@@ -93,9 +93,8 @@ const authController = {
             res.render('usersList', { user, users})
         } catch(error) {
             console.log(error)
-        }
-        
-    }
+        }  }
+
 }
 
 module.exports = authController;

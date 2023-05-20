@@ -39,8 +39,9 @@ const userController = {
         try {
             const avatar = req.file.filename;
             const user = req.session.user;
+            const { aboutMe } = req.body.aboutMe; 
             const userLogin = await User.findOne({ where: { email: user.email } })
-            await User.update({ foto: avatar }, {
+            await User.update({ foto: avatar, descricao: aboutMe  }, {
                 where: { id_usuario: userLogin.id_usuario }
             })
             return res.redirect('/restrito')
