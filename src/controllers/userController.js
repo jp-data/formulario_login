@@ -34,13 +34,16 @@ const userController = {
         return res.redirect('/login')
     },
 
-    //upload de foto 
+    //upload de foto e editor de perfil
     upload: async (req, res) => {
         try {
+            //capturando os dados
             const avatar = req.file.filename;
             const user = req.session.user;
             const { aboutMe } = req.body.aboutMe; 
+            //capturando o usuário
             const userLogin = await User.findOne({ where: { email: user.email } })
+            //atualizando os dados do usuário capturado
             await User.update({ foto: avatar, descricao: aboutMe  }, {
                 where: { id_usuario: userLogin.id_usuario }
             })
