@@ -37,20 +37,39 @@ const userController = {
     //upload de foto e editor de perfil
     upload: async (req, res) => {
         try {
+
             //capturando os dados
-            const avatar = req.file.filename;
+            let avatar = null;
             const user = req.session.user;
-            const { aboutMe } = req.body.aboutMe; 
+            const { aboutMe } = req.body;
+
             //capturando o usuário
             const userLogin = await User.findOne({ where: { email: user.email } })
+
+            if (userLogin.foto){
+                avatar = userLogin.foto;
+            }
+
+            if (req.file) {
+                avatar = req.file.filename;
+            }
+
             //atualizando os dados do usuário capturado
-            await User.update({ foto: avatar, descricao: aboutMe  }, {
-                where: { id_usuario: userLogin.id_usuario }
-            })
+            await User.update(
+                {
+                    foto: avatar,
+                    descricao: aboutMe
+                },
+                {
+                    where: { id_usuario: userLogin.id_usuario }
+                }
+            );
+
             return res.redirect('/restrito')
 
         } catch (error) {
-            console.log(error)
+            console.log(error);
+            res.status(500).send("Erro ao atualizar dados do usuário")
         }
     },
 
