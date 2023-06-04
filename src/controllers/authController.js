@@ -19,15 +19,16 @@ const authController = {
 
             //busca o email informado no banco de dados
             const usuario = await User.findOne({ where: { email: email } });
+
             //Verifica se o usuário existe
             if (!usuario) {
-                // console.log("usuário não encontrado")
                 //se não existir, renderiza a página de login
                 return res.render('login', { error: "Email ou senhá inválidos" });
             }
 
             //validação da senha
             const senhaValida = bcrypt.compareSync(senha, usuario.senha);
+
             //verifica se a senha está correta
             if (!senhaValida) {
                 // console.log("usuário não encontrado")
@@ -50,13 +51,16 @@ const authController = {
     privateArea: async (req, res) => {
         try {
             //busca o usuário na sessão
-            const user = req.session.user
+            const user = req.session.user;
+
             //const para ficha de usuário
-            const userLogin = await User.findOne({ where: {email: user.email} })
+            const userLogin = await User.findOne({ where: {email: user.email} });
+
             //traz os usuários do banco de dados
-            const users = await User.findAll()
+            const users = await User.findAll();
+
             //Renderiza a página restrita que contém a lista de usuários cadastrados
-            res.render('areaRestrita', { userLogin })
+            res.render('areaRestrita', { userLogin });
 
         } catch (error) {
             console.log(error)
@@ -68,11 +72,14 @@ const authController = {
     privateAreaEdit: async (req, res) => {
         try {
             //bsca o usuário na sessão
-            const user = req.session.user
+            const user = req.session.user;
+
             //encontra no DB
-            const userLogin = await User.findOne({ where: {email: user.email} })
+            const userLogin = await User.findOne({ where: {email: user.email} });
+
             //renderiza a página com o perfil do usuário na sessão
-            res.render('editPerfil', { user, userLogin })
+            res.render('editPerfil', { user, userLogin });
+
         } catch (error) {
             console.log(error)
         }
@@ -80,15 +87,17 @@ const authController = {
 
     logout: async (req, res) => {
         //destroi a sessão
-        req.session.destroy()
+        req.session.destroy();
+
         //redireciona para pág de login
-        return res.redirect('/login')
+        return res.redirect('/login');
     },
 
     usersList: async (req, res) => {
         try {
         //busca o usuário na sessão
             const user = req.session.user
+            
             const users = await User.findAll()
             res.render('usersList', { user, users})
         } catch(error) {
