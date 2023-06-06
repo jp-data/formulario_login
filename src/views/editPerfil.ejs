@@ -14,14 +14,13 @@
     <div class="background">
         <h1>Editar Perfil</h1>
 
-        <div class="profile">
-            <form action="/upload" method="POST" id="profile" enctype="multipart/form-data">
-                <div class="perfil-card-photo">
+        <div class="edit-profile">
+            <form action="/upload" method="POST" id="edit-profile" enctype="multipart/form-data">
+                <div class="edit-perfil-card-photo">
                     <img class="avatar" src="/uploads/<%= userLogin.foto %>" alt="avatar">
-                    <input type="file" name="avatar">
-                    
+                    <input type="file" name="avatar">  
                 </div>
-                <div class="perfil-card-datas">
+                <div class="edit-perfil-card-datas">
                     <h1><%=userLogin.nome%></h1>
                         <label for="about-me"><b>Sobre mim:</b></label>
                         <input type="text" id="about-me" name="aboutMe">
