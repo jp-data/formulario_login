@@ -1,0 +1,65 @@
+//edição de perfil
+* {
+    font-family: Poppins-Regular;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    width: 100vw;
+    background: #b2c5b2;
+}
+
+.background {
+    width: 100%;
+    height: 90vh;
+    
+}
+
+.edit-profile {
+    width: 80%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .edit-perfil-card-photo img {
+    border-radius: 45%
+  }
+
+  #edit-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+
+
+  .edit-perfil-card-photo,
+  .edit-perfil-card-datas {
+     width: 30%;
+     background-color: white;
+     height: 45vh;
+  }
+  
+  .edit-perfil-card-photo img {
+    border-radius: 45%;
+    height: 100%;
+  }
+
+  .edit-perfil-card-photo input {
+    width: 80%;
+  }
+
+  #about-me {
+    height: 50vh;
+    width: 100%;
+    border: none;
+  }
+
+  button {
+    margin-top: 10px; 
+    width: 5%;
+  } 

@@ -37,10 +37,6 @@ body {
     text-align: center;
 }
 
-#logout {
-    align-self: center
-}
-
 .perfil-card-photo {
     background-color: white;
     height: 50vh;
@@ -81,24 +77,4 @@ body {
 .avatar {
     width: 60%;
     height: 50vh;
-}
-
-//edição de perfil
-
-  
-  .edit-perfil-card-photo,
-  .edit-perfil-card-datas {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px; /* Espaço entre os elementos dentro do cartão */
-  }
-  
-  .edit-perfil-card-photo img {
-    border-radius: 45%;
-    width: 30%;
-  }
-
-  button {
-    margin-top: 10px; /* Espaço acima do botão */
-  }
+};

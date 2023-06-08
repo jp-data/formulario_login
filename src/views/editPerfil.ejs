@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/private.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/editPerfil.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/header.css">
 </head>
 <body>
@@ -24,14 +24,12 @@
                     <h1><%=userLogin.nome%></h1>
                         <label for="about-me"><b>Sobre mim:</b></label>
                         <input type="text" id="about-me" name="aboutMe">
+                        <button type="submit">Salvar</button>
                 </div>
-                <button type="submit">Salvar</button>
+                
             </form>  
                
         </div>
     </div>
-    <form id="logout" action="/logout" method="POST">
-        <button>Fazer Logout</button>
-    </form>
 </body>
 </html>
