@@ -13,18 +13,17 @@
     <%- include('./partials/header') %>
     
     <div class="background">
-        <h1>Perfil</h1>
 
         <div class="profile">
             
                 <div class="perfil-card">
+                    <h1><%=userLogin.nome%></h1>
                     <img class="avatar" src="/uploads/<%= userLogin.foto %>" alt="avatar-padrao">
+                    
                 </div>
              
                 <div class="perfil-card-datas">
-                    <h1><%=userLogin.nome%></h1>
                     <p><%=userLogin.descricao%></p>
-                    <li>Email: <%=userLogin.email%></li>
                 </div>
                 <div class="perfil-card-resume">
                     <h3>Lista de Agências</h3>

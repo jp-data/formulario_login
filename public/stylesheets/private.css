@@ -22,6 +22,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
 
 #profile {
@@ -32,13 +33,15 @@ body {
 .perfil-card {
     width: 25%;
     height: 50vh;
+    align-self: flex-start;
+    margin-top: 30px;
 }
 .background h1 {
     text-align: center;
 }
 
 .perfil-card-photo {
-    background-color: white;
+    background-color: #E6E6FA;
     height: 50vh;
     flex-grow: 0.2;
     width: 100%;
@@ -55,11 +58,12 @@ body {
 }
 
 .perfil-card-datas {
-    background-color: white;
+    background-color: #B0C4DE;
     height: 50vh;
     border-radius: 10px;
     flex-grow: 0.2;
-    max-width: 30%;
+    width: 25%;
+    /* max-width: 30%; */
 }
 
 .perfil-card-datas p {
@@ -68,7 +72,7 @@ body {
 }
 
 .perfil-card-resume {
-    background-color: white;
+    background-color: #B0C4DE;
     height: 50vh;
     border-radius: 10px;
     flex-grow: 0.2;

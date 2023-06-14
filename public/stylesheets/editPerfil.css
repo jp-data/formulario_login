@@ -37,11 +37,18 @@ body {
 
 
 
-  .edit-perfil-card-photo,
-  .edit-perfil-card-datas {
+  .edit-perfil-card-photo {
      width: 30%;
-     background-color: white;
      height: 45vh;
+  }
+
+  .edit-perfil-card-datas {
+    width: 40%;
+    height: 45vh;
+  }
+
+  .edit-perfil-card-datas input {
+    background-color: #B0C4DE;
   }
   
   .edit-perfil-card-photo img {
@@ -51,6 +58,10 @@ body {
 
   .edit-perfil-card-photo input {
     width: 80%;
+  }
+
+  .edit-perfil-card-datas button {
+    width: 50px;
   }
 
   #about-me {
