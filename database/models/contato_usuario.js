@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataType) => {
 
-    const User_contact = sequelize.define('User', {
+    const Contact = sequelize.define('Contact', {
         //colunas e especificações
         id_cadastro: {
             type: DataType.INTEGER,
@@ -18,5 +18,5 @@ module.exports = (sequelize, DataType) => {
         tableName: 'contato_usuario',
         timestamps: false
     })
-    return User_contact
+    return Contact
 };
