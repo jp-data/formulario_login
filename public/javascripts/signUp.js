@@ -10,7 +10,7 @@ const passwordConfirmation = document.getElementById('password-confirmation')
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     const result = checkInputs()
-    if (result) form.submit()
+    if (result) form()
 })
 
 password.addEventListener('focus', (e) => {

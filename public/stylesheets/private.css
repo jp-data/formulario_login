@@ -31,8 +31,8 @@ body {
 }
 
 .perfil-card {
-    width: 25%;
-    height: 50vh;
+    width: 15%;
+    height: 25vh;
     align-self: flex-start;
     margin-top: 30px;
 }
@@ -44,11 +44,6 @@ body {
     background-color: #E6E6FA;
     height: 50vh;
     flex-grow: 0.2;
-    width: 100%;
-}
-
-.perfil-card-photo img {
-    border-radius: 45%;
     width: 100%;
 }
 

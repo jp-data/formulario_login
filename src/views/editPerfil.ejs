@@ -14,7 +14,7 @@
     <div class="background">
 
         <div class="edit-profile">
-            <form action="/upload" method="POST" id="edit-profile" enctype="multipart/form-data">
+            <form action="/upload" method="POST" id="edit-profile-form" enctype="multipart/form-data">
                 <div class="edit-perfil-card-photo">
                     <img class="avatar" src="/uploads/<%= userLogin.foto %>" alt="avatar">
                     <input type="file" name="avatar">  
@@ -24,6 +24,13 @@
                         <label for="about-me"><b>Sobre mim:</b></label>
                         <input type="text" id="about-me" name="aboutMe">
                         <button type="submit">Salvar</button>
+                </div>
+                <div class="edit-perfil-card-contact">
+                    <input type="text" placeholder="Idade" name="">
+                    <input type="text" placeholder="Estado" name="">
+                    <input type="text" placeholder="Cidade" name="">
+                    <input type="text" placeholder="Email" name="">
+                    <input type="text" placeholder="Telefone(WhatsApp)" name="">
                 </div>
                 
             </form>  
