@@ -11,13 +11,13 @@ const userController = {
 
     //cadastro
     cadastro: async (req, res) => {
-        
+
         //pega os dados do usuário do corpo da req/
         const { email, name, senha } = req.body;
-        
+
         //verificação do email     
         const users = await User.findOne({ where: { email: email } });
-        
+
         //verificação do email 
         if (users) {
             return res.render('formCadastro', { error: 'Email já cadastrado' })
@@ -39,7 +39,7 @@ const userController = {
     //upload de foto e editor de perfil
     upload: async (req, res) => {
         try {
-            
+
             const user = req.session.user;
 
             //capturando o usuário
@@ -54,29 +54,39 @@ const userController = {
                 avatar = req.file.filename;
             }
 
-           
-            //capturando a descricao
-            let {aboutMe: aboutMeValue} = req.body;
 
-            if (aboutMeValue !== ""){
+            //capturando a descricao
+            let { aboutMe: aboutMeValue } = req.body;
+
+            if (aboutMeValue !== "") {
                 aboutMe = aboutMeValue;
             } else {
-                let {aboutMe: aboutMeValue} = userLogin.descricao;
+                let { aboutMe: aboutMeValue } = userLogin.descricao;
                 aboutMe = aboutMeValue;
             }
-            
+
+            //capturando dados de contato
+            let { age: ageValue } = req.body;
+
+            if (ageValue !== "") {
+                age = ageValue;
+            } else {
+                let { age: ageValue } = userLogin.idade;
+                age = ageValue;
+            }
+
 
             //atualizando os dados do usuário capturado
             await User.update(
                 {
                     foto: avatar,
-                    descricao: aboutMe
+                    descricao: aboutMe,
+                    idade: age
                 },
                 {
                     where: { id_usuario: userLogin.id_usuario }
                 }
             );
-
             return res.redirect('/restrito');
 
         } catch (error) {

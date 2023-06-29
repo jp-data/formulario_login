@@ -1,3 +1,5 @@
+const { database } = require("../config/config");
+
 module.exports = (sequelize, DataType) => {
     //const usuario será usada no controller
     const User = sequelize.define('User', {
@@ -11,7 +13,11 @@ module.exports = (sequelize, DataType) => {
         senha: DataType.STRING,
         nome: DataType.STRING,
         foto: DataType.STRING,
-        descricao: DataType.STRING
+        descricao: DataType.STRING,
+        idade: DataType.INTEGER,
+        estado: DataType.STRING,
+        cidade: DataType.STRING,
+        telefone: DataType.INTEGER
     }, {
         tableName: 'usuarios',
         timestamps: false

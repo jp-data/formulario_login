@@ -31,8 +31,9 @@ body {
 
 .perfil-card-photo {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     background-color: #E6E6FA;
     width: 25%;
     height: 100vh;
@@ -40,12 +41,16 @@ body {
 
 .card-photo {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .card-photo img {
     border-radius: 45%;
     width: 40%;
     height: 20vh;
+    alig-self: center;
 }
 
 .perfil-card-datas {
@@ -66,7 +71,7 @@ body {
     background-color: #B0C4DE;
     height: 50vh;
     border-radius: 10px;
-    flex-grow: 0.2;
+    width: 100%;
 }
 
 .avatar {
