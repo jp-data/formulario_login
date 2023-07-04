@@ -45,6 +45,7 @@ const userController = {
             //capturando o usuário
             const userLogin = await User.findOne({ where: { email: user.email } });
 
+
             //capturando a foto
             if (userLogin.foto) {
                 avatar = userLogin.foto;
@@ -65,7 +66,7 @@ const userController = {
                 aboutMe = aboutMeValue;
             }
 
-            //capturando dados de contato
+            //capturando a idade
             let { age: ageValue } = req.body;
 
             if (ageValue !== "") {
@@ -75,13 +76,46 @@ const userController = {
                 age = ageValue;
             }
 
+            //capturando o estado
+            let { state: stateValue } = req.body;
+
+            if (stateValue !== "") {
+                state = stateValue;
+            } else {
+                let { state: stateValue } = userLogin.estado;
+                state = stateValue;
+            }
+
+            //capturando a cidade
+            let { city: cityValue } = req.body;
+
+            if (cityValue !== "") {
+                city = cityValue;
+            } else {
+                let { city: cityValue } = userLogin.cidade;
+                city = cityValue;
+            }
+
+            //capturando o telefone
+            let { phone: phoneValue } = req.body;
+
+            if (phoneValue !== "") {
+                phone = phoneValue;
+            } else {
+                let { phone: phoneValue } = userLogin.telefone;
+                phone = phoneValue;
+            }
+
 
             //atualizando os dados do usuário capturado
             await User.update(
                 {
                     foto: avatar,
                     descricao: aboutMe,
-                    idade: age
+                    idade: age,
+                    estado: state,
+                    cidade: city,
+                    telefone: phone
                 },
                 {
                     where: { id_usuario: userLogin.id_usuario }
