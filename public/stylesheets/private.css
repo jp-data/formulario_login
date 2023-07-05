@@ -1,5 +1,5 @@
 * {
-    font-family: Poppins-Regular;
+    font-family: 'Narnoor', serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -8,7 +8,7 @@
 body { 
     width: 100%;
     height: 100vh;
-    background: #b2c5b2;
+    background-color: #F5F5F5;
 }
 
 .background {
@@ -34,7 +34,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background-color: #E6E6FA;
     width: 25%;
     height: 100vh;
 }
@@ -44,6 +43,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    background-color: white;
 }
 
 .card-photo img {
@@ -54,12 +54,21 @@ body {
 }
 
 .perfil-card-datas {
-    background-color: #B0C4DE;
-    height: 50vh;
-    border-radius: 10px;
-    flex-grow: 0.2;
-    width: 25%;
-    /* max-width: 30%; */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 80vh;
+    width: 50%;
+    border: 1px groove;
+    border-radius: 10px;  
+}
+
+#about-me { 
+    height: 30vh;
+}
+
+#objective, #experiences {
+    height: 20vh;
 }
 
 .perfil-card-datas p {
@@ -68,15 +77,17 @@ body {
 }
 
 .perfil-card-resume {
-    background-color: #B0C4DE;
     height: 50vh;
     border-radius: 10px;
     width: 100%;
+    background-color: white;
 }
 
 .avatar {
     width: 60%;
     height: 50vh;
 };
+
+
 
 
