@@ -59,21 +59,33 @@ const userController = {
             //capturando a descricao
             let { aboutMe: aboutMeValue } = req.body;
 
-            if (aboutMeValue !== "") {
+            if (aboutMeValue != "") {
                 aboutMe = aboutMeValue;
-            } else {
+            } 
+            
+            else if (userLogin.descricao) {
                 let { aboutMe: aboutMeValue } = userLogin.descricao;
                 aboutMe = aboutMeValue;
+            } 
+            
+            else {
+                aboutMe = null;
             }
 
             //capturando a idade
             let { age: ageValue } = req.body;
 
-            if (ageValue !== "") {
+            if (ageValue) {
                 age = ageValue;
-            } else {
+            } 
+            
+            else if (userLogin.idade) {
                 let { age: ageValue } = userLogin.idade;
                 age = ageValue;
+            } 
+            
+            else {
+                age = null;
             }
 
             //capturando o estado
@@ -81,29 +93,49 @@ const userController = {
 
             if (stateValue !== "") {
                 state = stateValue;
-            } else {
+            } 
+
+            else if (userLogin.estado) {
                 let { state: stateValue } = userLogin.estado;
                 state = stateValue;
+            } 
+            
+            else {
+                state = null;
             }
+
 
             //capturando a cidade
             let { city: cityValue } = req.body;
 
             if (cityValue !== "") {
                 city = cityValue;
-            } else {
+            }
+            
+            else if (userLogin.cidade) {
                 let { city: cityValue } = userLogin.cidade;
                 city = cityValue;
+            } 
+            
+            else {
+                city = null;
             }
+
 
             //capturando o telefone
             let { phone: phoneValue } = req.body;
 
             if (phoneValue !== "") {
                 phone = phoneValue;
-            } else {
+            } 
+            
+            else if (userLogin.telefone) {
                 let { phone: phoneValue } = userLogin.telefone;
                 phone = phoneValue;
+            } 
+            
+            else {
+                phone = null;
             }
 
 

@@ -1,6 +1,6 @@
 //edição de perfil
 * {
-    font-family: Poppins-Regular;
+    font-family: 'Narnoor', serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -21,60 +21,76 @@ body {
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: center;
-  }
-
-  .edit-perfil-card-photo img {
-    border-radius: 45%
   }
 
   #edit-profile-form {
     height: 100vh;
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+  }
+ 
+  .card-photo-contact {
+     display: flex;
+     width: 90%;
+     height: 30vh;
+
   }
 
-  .edit-perfil-card-photo {
-     width: 10%;
-     height: 25vh;
+  .card-about-me {
+    width: 90%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  .edit-perfil-card-datas, .edit-perfil-card-contact {
-    width: 40%;
-    height: 45vh;
-    align-self: center;
-  }
-
-  .edit-perfil-card-contact {
+  #about-me {
+    height: 30vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  .edit-perfil-card-datas input {
-    background-color: #B0C4DE;
-  }
-  
-  .edit-perfil-card-photo img {
-    border-radius: 45%;
-    height: 100%;
-  }
-
-  .edit-perfil-card-photo input {
-    width: 80%;
-  }
-
-  .edit-perfil-card-datas button {
-    width: 50px;
-  }
-
-  #about-me {
-    height: 50vh;
+  #experiences {
+    height: 60vh;
     width: 100%;
-    border: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #experiences input {
+    width: 15%;
+  }
+
+  #about-me-experiences {
+    width: 40%;
+    height: 20vh;
+  }
+
+  #about-me-text {
+    width: 40%;
+    height: 40vh;
+  }
+
+  #photo img {
+    border-radius: 45%;
+    height: 20vh;
+  }
+
+  #photo input {
+    width: 80%;
   }
 
   button {
     margin-top: 10px; 
     width: 5%;
   } 
+
+  #edit-profile-form input, #edit-profile-form textarea {
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-bottom: 2px;
+  }
