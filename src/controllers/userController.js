@@ -75,7 +75,7 @@ const userController = {
             //capturando a idade
             let { age: ageValue } = req.body;
 
-            if (ageValue) {
+            if (ageValue != "") {
                 age = ageValue;
             } 
             

@@ -1,7 +1,7 @@
 const config = {
   username: 'root',
   password: '',
-  database: 'login', //o nome do banco que foi criado no mysql
+  database: 'login', 
   host: 'localhost',
   dialect: 'mysql' 
 }
