@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const { User } = require('../../database/models');
+const { Experience } = require('../../database/models');
 
 const userController = {
 
@@ -36,15 +37,32 @@ const userController = {
         return res.redirect('/login');
     },
 
+    //experiências do usuário
+    // experience: async(req, res) => {
+
+    //     const { companie, ocupation, job } = req.body; 
+
+    //     await Experience.create({
+    //         companie: empresa,
+    //         ocupation: cargo,
+    //         job: atividades
+    //     })
+    // },
+
+
+
     //upload de foto e editor de perfil
     upload: async (req, res) => {
         try {
 
+            //capturando o usuario da sessão
             const user = req.session.user;
 
             //capturando o usuário
             const userLogin = await User.findOne({ where: { email: user.email } });
 
+            //capturando os dados do formulário referente a experiencia
+            const { companie: companieValue, ocupation: ocupationValue, job: jobValue } = req.body;
 
             //capturando a foto
             if (userLogin.foto) {
@@ -61,13 +79,13 @@ const userController = {
 
             if (aboutMeValue != "") {
                 aboutMe = aboutMeValue;
-            } 
-            
+            }
+
             else if (userLogin.descricao) {
                 let { aboutMe: aboutMeValue } = userLogin.descricao;
                 aboutMe = aboutMeValue;
-            } 
-            
+            }
+
             else {
                 aboutMe = null;
             }
@@ -77,13 +95,13 @@ const userController = {
 
             if (ageValue != "") {
                 age = ageValue;
-            } 
-            
+            }
+
             else if (userLogin.idade) {
                 let { age: ageValue } = userLogin.idade;
                 age = ageValue;
-            } 
-            
+            }
+
             else {
                 age = null;
             }
@@ -93,13 +111,13 @@ const userController = {
 
             if (stateValue !== "") {
                 state = stateValue;
-            } 
+            }
 
             else if (userLogin.estado) {
                 let { state: stateValue } = userLogin.estado;
                 state = stateValue;
-            } 
-            
+            }
+
             else {
                 state = null;
             }
@@ -111,12 +129,12 @@ const userController = {
             if (cityValue !== "") {
                 city = cityValue;
             }
-            
+
             else if (userLogin.cidade) {
                 let { city: cityValue } = userLogin.cidade;
                 city = cityValue;
-            } 
-            
+            }
+
             else {
                 city = null;
             }
@@ -127,16 +145,21 @@ const userController = {
 
             if (phoneValue !== "") {
                 phone = phoneValue;
-            } 
-            
+            }
+
             else if (userLogin.telefone) {
                 let { phone: phoneValue } = userLogin.telefone;
                 phone = phoneValue;
-            } 
-            
+            }
+
             else {
                 phone = null;
             }
+
+            //experiencias
+
+            //capturando a empresa
+            
 
 
             //atualizando os dados do usuário capturado
@@ -153,6 +176,15 @@ const userController = {
                     where: { id_usuario: userLogin.id_usuario }
                 }
             );
+
+            await Experience.create(
+                {
+                    empresa: companie,
+                    cargo: ocupation,
+                    atividades: job 
+                },
+            )
+
             return res.redirect('/restrito');
 
         } catch (error) {

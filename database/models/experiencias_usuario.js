@@ -10,7 +10,13 @@ module.exports = (sequelize, DataType) => {
             autoIncrement: true
         },
 
-        id_usuario: DataType.INTEGER,
+        id_usuario: {
+            type: DataType.INTEGER,
+            references: {
+                model: 'usuarios',
+                key: 'id_usuario'
+            }
+        },
         cargo: DataType.STRING,
         empresa: DataType.STRING,
         data_inicio: DataType.DATE,
