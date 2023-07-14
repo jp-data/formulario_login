@@ -38,16 +38,28 @@ const userController = {
     },
 
     //experiências do usuário
-    // experience: async(req, res) => {
+    experience: async(req, res) => {
 
-    //     const { companie, ocupation, job } = req.body; 
+        const { companie: companieValue, ocupation: ocupationValue, job: jobValue } = req.body; 
 
-    //     await Experience.create({
-    //         companie: empresa,
-    //         ocupation: cargo,
-    //         job: atividades
-    //     })
-    // },
+        if ( companieValue != "" ) {
+            companie = companieValue
+        }
+
+        if ( ocupationValue != "" ) {
+            ocupation = ocupationValue
+        }
+
+        if ( jobValue != "" ) {
+            job = jobValue
+        }
+
+        await Experience.update({
+            companie: empresa,
+            ocupation: cargo,
+            job: atividades
+        })
+    },
 
 
 
@@ -60,9 +72,6 @@ const userController = {
 
             //capturando o usuário
             const userLogin = await User.findOne({ where: { email: user.email } });
-
-            //capturando os dados do formulário referente a experiencia
-            const { companie: companieValue, ocupation: ocupationValue, job: jobValue } = req.body;
 
             //capturando a foto
             if (userLogin.foto) {
@@ -155,13 +164,7 @@ const userController = {
             else {
                 phone = null;
             }
-
-            //experiencias
-
-            //capturando a empresa
             
-
-
             //atualizando os dados do usuário capturado
             await User.update(
                 {
@@ -176,14 +179,6 @@ const userController = {
                     where: { id_usuario: userLogin.id_usuario }
                 }
             );
-
-            await Experience.create(
-                {
-                    empresa: companie,
-                    cargo: ocupation,
-                    atividades: job 
-                },
-            )
 
             return res.redirect('/restrito');
 
