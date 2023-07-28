@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const { User } = require('../../database/models');
-const { Experience } = require('../../database/models');
+// const { Experience } = require('../../database/models');
 
 const userController = {
 
@@ -12,54 +12,62 @@ const userController = {
 
     //cadastro
     cadastro: async (req, res) => {
+        try {
+            //pega os dados do usuário do corpo da req/
+            const { email, name, senha } = req.body;
 
-        //pega os dados do usuário do corpo da req/
-        const { email, name, senha } = req.body;
+            //verificação do email     
+            const users = await User.findOne({ where: { email: email } });
 
-        //verificação do email     
-        const users = await User.findOne({ where: { email: email } });
+            //verificação do email 
+            if (users) {
+                return res.render('formCadastro', { error: 'Email já cadastrado' })
+            }
+            const passwordToString = senha.toString();
 
-        //verificação do email 
-        if (users) {
-            return res.render('formCadastro', { error: 'Email já cadastrado' })
-        };
+            const hash = bcrypt.hashSync(passwordToString, saltRounds);
 
-        const passwordToString = senha.toString();
+            await User.create({
+                email: email,
+                nome: name,
+                senha: hash
+            });
 
-        const hash = bcrypt.hashSync(passwordToString, saltRounds);
+            return res.redirect('/login')
+        }
 
-        await User.create({
-            email: email,
-            nome: name,
-            senha: hash
-        });
+        catch (error) {
+            console.log(error)
+            res.status(500).send("Erro ao cadastrar dados do usuário")
+        }
 
-        return res.redirect('/login');
+
+
     },
 
     //experiências do usuário
-    experience: async(req, res) => {
+    // experience: async(req, res) => {
 
-        const { companie: companieValue, ocupation: ocupationValue, job: jobValue } = req.body; 
+    //     const { companie: companieValue, ocupation: ocupationValue, job: jobValue } = req.body; 
 
-        if ( companieValue != "" ) {
-            companie = companieValue
-        }
+    //     if ( companieValue != "" ) {
+    //         companie = companieValue
+    //     }
 
-        if ( ocupationValue != "" ) {
-            ocupation = ocupationValue
-        }
+    //     if ( ocupationValue != "" ) {
+    //         ocupation = ocupationValue
+    //     }
 
-        if ( jobValue != "" ) {
-            job = jobValue
-        }
+    //     if ( jobValue != "" ) {
+    //         job = jobValue
+    //     }
 
-        await Experience.update({
-            companie: empresa,
-            ocupation: cargo,
-            job: atividades
-        })
-    },
+    //     await Experience.update({
+    //         companie: empresa,
+    //         ocupation: cargo,
+    //         job: atividades
+    //     })
+    // },
 
 
 
@@ -164,7 +172,7 @@ const userController = {
             else {
                 phone = null;
             }
-            
+
             //atualizando os dados do usuário capturado
             await User.update(
                 {
