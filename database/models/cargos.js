@@ -4,7 +4,7 @@ module.exports = (sequelize, DataType) => {
     //const usuario será usada no controller
     const Experience = sequelize.define('Experience', {
         //abaixo as colunas e as configurações
-        id_experiencia: {
+        id_cargo: {
             type: DataType.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -24,7 +24,7 @@ module.exports = (sequelize, DataType) => {
         atividades: DataType.STRING
 
     }, {
-        tableName: 'experiencias_usuario',
+        tableName: 'cargos',
         timestamps: false
     })
 
