@@ -1,4 +1,3 @@
-//edição de perfil
 * {
     font-family: 'Narnoor', serif;
     padding: 0;
@@ -29,13 +28,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
   }
  
   .card-photo-contact {
      display: flex;
-     width: 90%;
-     height: 30vh;
+     flex-direction: column;
+     width: 40%;
+     height: 40vh;
 
   }
 
