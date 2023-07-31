@@ -26,20 +26,18 @@ const authController = {
             //Verifica se o usuário existe
             if (!usuario) {
                 //se não existir, renderiza a página de login
-                console.log("Usuário encontrado:", usuario, usuario.senha);
+                console.log("Usuário encontrado:", usuario);
                 return res.render('login', { error: "Email ou senha inválidos" });
             }
 
-            //validação da senha
-
+            //validação da senha usando bcrypt
             const senhaValida = await bcrypt.compare(senha, usuario.senha);
 
             //verifica se a senha está correta
             if (!senhaValida) {
-                // console.log("usuário não encontrado")
                 //se não existir, renderiza a página de login
                 console.log("Senha inválida para o usuário:", email, senhaValida);
-                return res.render('login', { error: "senha inválida" });
+                return res.render('login', { error: "Email ou senha inválidos" });
             }
 
             //SE os dois estiverem ok, cria uma sessão para o usuário
