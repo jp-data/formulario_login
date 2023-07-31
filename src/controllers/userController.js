@@ -23,11 +23,11 @@ const userController = {
             if (users) {
                 return res.render('formCadastro', { error: 'Email já cadastrado' })
             }
+
             const passwordToString = senha.toString();
+            const hash = await bcrypt.hash(passwordToString, saltRounds);
 
-            const hash = bcrypt.hashSync(passwordToString, saltRounds);
-
-            await User.create({
+            User.create({
                 email: email,
                 nome: name,
                 senha: hash

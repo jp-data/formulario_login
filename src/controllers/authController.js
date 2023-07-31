@@ -25,27 +25,26 @@ const authController = {
             //Verifica se o usuário existe
             if (!usuario) {
                 //se não existir, renderiza a página de login
-                console.log("Usuário encontrado:", usuario);
+                console.log("Usuário encontrado:", usuario, usuario.senha);
                 return res.render('login', { error: "Email ou senha inválidos" });
             }
 
             //validação da senha
 
-            const senhaToString = senha.toString();
-            const senhaValida = bcrypt.compare(senha, usuario.senha);
+            const senhaValida = await bcrypt.compare(senha, usuario.senha);
 
             //verifica se a senha está correta
             if (!senhaValida) {
                 // console.log("usuário não encontrado")
                 //se não existir, renderiza a página de login
-                console.log("Senha inválida para o usuário:", email, senhaToString, senhaValida);
+                console.log("Senha inválida para o usuário:", email, senhaValida);
                 return res.render('login', { error: "senha inválida" });
             }
 
             //SE os dois estiverem ok, cria uma sessão para o usuário
             //Salvando o email e o id do usuário na sessão
             req.session.user = { email: usuario.email, id: usuario.id_usuario }
-            console.log("Sessão criada para o usuário:", req.session.user);
+            console.log("Sessão criada para o usuário:", req.session.user, senhaValida);
 
             //leva o usuário para a página restrita
             return res.redirect('/restrito')
