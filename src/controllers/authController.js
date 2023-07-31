@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require ('bcrypt');
 const { User } = require('../../database/models')
 
 const authController = {
@@ -16,8 +16,9 @@ const authController = {
         try {
             //pegar os dados do usuário pelo formulário
             const { email, senha } = req.body;
-
             console.log("Buscando usuário com o email:", email);
+
+
             //busca o email informado no banco de dados
             const usuario = await User.findOne({ where: { email: email } });
             console.log("Usuário encontrado:", usuario);
