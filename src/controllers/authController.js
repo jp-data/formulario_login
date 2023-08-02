@@ -43,7 +43,7 @@ const authController = {
             //SE os dois estiverem ok, cria uma sessão para o usuário
             //Salvando o email e o id do usuário na sessão
             req.session.user = { email: usuario.email, id: usuario.id_usuario }
-            console.log("Sessão criada para o usuário:", req.session.user, senhaValida);
+
 
             //leva o usuário para a página restrita
             return res.redirect('/restrito')
