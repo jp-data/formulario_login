@@ -23,8 +23,12 @@
                 <form action="/upload" method="POST" id="edit-profile-form" enctype="multipart/form-data">
                     <div class="card-photo-contact">
                         <div id="photo">
+                            <h2>Escolha uma foto</h2>
                             <img class="avatar" src="/uploads/<%= userLogin.foto %>" alt="avatar">
                             <input type="file" name="avatar">
+                        </div>
+                        <div id="contact-text">
+                            <h2>Contato</h2>
                         </div>
                         <div id="contact">
                             <input type="text" placeholder="Idade" name="age">
