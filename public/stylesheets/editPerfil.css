@@ -112,6 +112,7 @@ h2 {
 #edit-experience-form {
   display: flex;
   flex-direction: column;
+  height: 100vh;
   align-items: center;
 }
 
@@ -157,6 +158,14 @@ button {
 #experience1, #experience2, #experience3 {
   width: 80%;
   /* background-color: white; */
+}
+
+#save-experience1, #discard-experience1 , #save-experience2, #discard-experience2, #save-experience3, #discard-experience3   {
+  width: 12%;
+}
+
+#add-experience2 , #add-experience3 {
+  width: 25%;
 }
 
 #experience2, #experience3 {
