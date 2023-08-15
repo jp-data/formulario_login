@@ -24,5 +24,8 @@ router.post('/logout', authController.logout);
 //rota para upload de foto
 router.post('/upload', upload.single('avatar'), userController.upload);
 
+//rota para cadastro de cargos
+router.post('/update', userController.experience);
+
 
 module.exports = router

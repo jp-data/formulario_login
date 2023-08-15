@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 // const saltRounds = 10;
 const { User } = require('../../database/models');
-// const { Experience } = require('../../database/models');
+const { Experience } = require('../../database/models');
 
 const userController = {
 
@@ -47,29 +47,33 @@ const userController = {
 
     },
 
-    //experiências do usuário
-    // experience: async(req, res) => {
+    // experiências do usuário
+    experience: async(req, res) => {
 
-    //     const { companie: companieValue, ocupation: ocupationValue, job: jobValue } = req.body; 
+        const user = req.session.user;
 
-    //     if ( companieValue != "" ) {
-    //         companie = companieValue
-    //     }
+        const userLogin = await User.findOne({ where: { email: user.email } });
 
-    //     if ( ocupationValue != "" ) {
-    //         ocupation = ocupationValue
-    //     }
+        const { companie: companieValue} = req.body; 
 
-    //     if ( jobValue != "" ) {
-    //         job = jobValue
-    //     }
+        if ( companieValue != "" ) {
+            companie = companieValue
+        }
 
-    //     await Experience.update({
-    //         companie: empresa,
-    //         ocupation: cargo,
-    //         job: atividades
-    //     })
-    // },
+        else if( userLogin.companie ){
+            let { companie: companieValue } = userLogin.companie;
+            companie = companieValue
+        }
+
+        await Experience.update(
+            {
+                empresa: companie
+            },
+            {
+                where: { id_usuario: userLogin.id_usuario }
+            }
+        )
+    },
 
 
 
