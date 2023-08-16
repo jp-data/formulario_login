@@ -49,12 +49,13 @@ const userController = {
 
     // experiências do usuário
     experience: async(req, res) => {
-
+        try{
+        
         const user = req.session.user;
 
         const userLogin = await User.findOne({ where: { email: user.email } });
 
-        const { companie: companieValue} = req.body; 
+        let { companie: companieValue} = req.body; 
 
         if ( companieValue != "" ) {
             companie = companieValue
@@ -65,14 +66,22 @@ const userController = {
             companie = companieValue
         }
 
-        await Experience.update(
+        await Experience.create(
             {
+                id_usuario: userLogin.id_usuario,
                 empresa: companie
             },
             {
                 where: { id_usuario: userLogin.id_usuario }
             }
         )
+
+        }catch(error) {
+            console.log(error);
+            res.status(500).send("Erro ao atualizar dados do usuário")
+        }
+
+        
     },
 
 
