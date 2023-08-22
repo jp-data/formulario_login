@@ -55,21 +55,15 @@ const userController = {
 
         const userLogin = await User.findOne({ where: { email: user.email } });
 
-        let { companie: companieValue} = req.body; 
-
-        if ( companieValue != "" ) {
-            companie = companieValue
-        }
-
-        else if( userLogin.companie ){
-            let { companie: companieValue } = userLogin.companie;
-            companie = companieValue
-        }
+        let { companie, ocupation, job} = req.body; 
 
         await Experience.create(
             {
                 id_usuario: userLogin.id_usuario,
-                empresa: companie
+                empresa: companie,
+                cargo: ocupation,
+                atividades: job,
+
             },
             {
                 where: { id_usuario: userLogin.id_usuario }
