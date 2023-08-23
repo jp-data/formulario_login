@@ -160,7 +160,7 @@ button {
   /* background-color: white; */
 }
 
-#save-experience1, #discard-experience1 , #save-experience2, #discard-experience2, #save-experience3, #discard-experience3   {
+#save-experience, #discard-experience1 ,  #discard-experience2, #discard-experience3   {
   width: 12%;
 }
 

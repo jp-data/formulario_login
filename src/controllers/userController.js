@@ -55,27 +55,46 @@ const userController = {
 
         const userLogin = await User.findOne({ where: { email: user.email } });
 
-        let { companie, ocupation, job} = req.body; 
+        let { companie, ocupation, job } = req.body; 
+        let { companie2, ocupation2, job2 } = req.body;
 
-        await Experience.create(
-            {
-                id_usuario: userLogin.id_usuario,
-                empresa: companie,
-                cargo: ocupation,
-                atividades: job,
+        let datas = [ companie, ocupation, job ]
+        let datas2 = [ companie2, ocupation2, job2]
+        console.log(datas2)
 
-            },
-            {
-                where: { id_usuario: userLogin.id_usuario }
-            }
-        )
+        if (datas) {
+            await Experience.create(
+                {
+                    id_usuario: userLogin.id_usuario,
+                    empresa: companie,
+                    cargo: ocupation,
+                    atividades: job,
+    
+                },
+                {
+                    where: { id_usuario: userLogin.id_usuario }
+                }
+            )
+        }
 
+        if (datas2) {
+            await Experience.create(
+                {
+                    id_usuario: userLogin.id_usuario,
+                    empresa: companie2,
+                    cargo: ocupation2,
+                    atividades: job2,
+    
+                },
+                {
+                    where: { id_usuario: userLogin.id_usuario }
+                }
+            )
+        }
         }catch(error) {
             console.log(error);
             res.status(500).send("Erro ao atualizar dados do usuário")
         }
-
-        
     },
 
 
