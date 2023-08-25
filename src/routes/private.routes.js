@@ -27,5 +27,7 @@ router.post('/upload', upload.single('avatar'), userController.upload);
 //rota para cadastro de cargos
 router.post('/update', userController.experience);
 
+router.post('/update2', userController.experienceTwo);
+
 
 module.exports = router

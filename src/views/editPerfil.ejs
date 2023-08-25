@@ -42,9 +42,12 @@
                         <div id="about-me">
                             <label for="about-me">
                                 <h2>Sobre mim</h2>
-                                <b><p>Fale um pouco sobre você, suas experiências e objetivos de carreira.</p></b>
+                                <b>
+                                    <p>Fale um pouco sobre você, suas experiências e objetivos de carreira.</p>
+                                </b>
                             </label>
-                            <textarea id="about-me-text" type="text"name="aboutMe"><%= userLogin.descricao %></textarea>
+                            <textarea id="about-me-text" type="text"
+                                name="aboutMe"><%= userLogin.descricao %></textarea>
                         </div>
                         <button type="submit">Salvar</button>
                     </div>
@@ -63,28 +66,31 @@
                             <button id="discard-experience1">Descartar</button>
                             <button id="add-experience2">Adicionar experiência</button>
                         </div>
-                        <div id="experience2">
-                            <input type="text" placeholder="Nome da Empresa" name="companie2">
-                            <input type="text" placeholder="Cargo" name="ocupation2">
-                            <h4>Descreva as atividades</h4>
-                            <textarea id="about-me-experiences" type="text" name="job2"></textarea>
-                            <button id="save-experience">Salvar</button>
-                            <button id="discard-experience2">Descartar</button>
-                            <button id="add-experience3">Adicionar experiência</button>
-                        </div>
-                        <div id="experience3">
-                            <input type="text" placeholder="Nome da Empresa" name="">
-                            <input type="text" placeholder="Cargo" name="">
-                            <h4>Descreva as atividades</h4>
-                            <textarea id="about-me-experiences" type="text" name=""></textarea>
-                            <button id="save-experience3">Salvar</button>
-                            <button id="discard-experience3">Descartar</button>
-                        </div>
+                </form>
+                <form action="/update2" method="POST" id="edit-experience-form">
+                    <div id="experience2">
+                        <input type="text" placeholder="Nome da Empresa" name="companie2">
+                        <input type="text" placeholder="Cargo" name="ocupation2">
+                        <h4>Descreva as atividades</h4>
+                        <textarea id="about-me-experiences" type="text" name="job2"></textarea>
+                        <button id="save-experience" type="submit">Salvar</button>
+                        <button id="discard-experience2">Descartar</button>
+                        <button id="add-experience3">Adicionar experiência</button>
                     </div>
                 </form>
-                
-                
+                <div id="experience3">
+                    <input type="text" placeholder="Nome da Empresa" name="">
+                    <input type="text" placeholder="Cargo" name="">
+                    <h4>Descreva as atividades</h4>
+                    <textarea id="about-me-experiences" type="text" name=""></textarea>
+                    <button id="save-experience3">Salvar</button>
+                    <button id="discard-experience3">Descartar</button>
+                </div>
             </div>
+
+
+
+        </div>
 
         </div>
         <script src="../javascripts/editPerfil.js"></script>
