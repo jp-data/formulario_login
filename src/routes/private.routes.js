@@ -29,5 +29,7 @@ router.post('/update', userController.experience);
 
 router.post('/update2', userController.experienceTwo);
 
+router.post('/update3', userController.experiencheThree);
+
 
 module.exports = router

@@ -1,5 +1,6 @@
 const bcrypt = require ('bcrypt');
-const { User } = require('../../database/models')
+const { User } = require('../../database/models');
+const { Experience } = require('../../database/models');
 
 const authController = {
     renderLogin: (req, res) => {
@@ -62,11 +63,15 @@ const authController = {
             //const para ficha de usuário
             const userLogin = await User.findOne({ where: {email: user.email} });
 
+            //traz as experiencias do usuário cadastradas
+            const jobs = await Experience.findAll({ where: {id_usuario: user.id} })
+
+            
             // //traz os usuários do banco de dados
             // const users = await User.findAll();
 
-            //Renderiza a página restrita que contém a lista de usuários cadastrados
-            res.render('areaRestrita', { userLogin });
+            //Renderiza a página restrita
+            res.render('areaRestrita', { userLogin, jobs } );
 
         } catch (error) {
             console.log(error)

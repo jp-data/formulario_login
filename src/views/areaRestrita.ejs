@@ -53,7 +53,15 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quae fuga reiciendis nobis optio eum iure impedit atque repudiandae aliquid voluptas quo voluptatum provident iste tempora temporibus, consequuntur placeat doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dicta magni, officia sapiente labore exercitationem dolorum in, soluta, placeat quasi vitae repellendus maxime voluptate autem velit itaque voluptatibus reprehenderit voluptatem? Lorem</p>
                     </div>
                     <div id="experiences">
+                        
                         <h3>Experiências:</h3>
+                        <% jobs.map( job => { %>
+                        <div id="experience1">
+                            <div class="ocupation"><%=job.cargo%></div>
+                            <div class="companie"><%=job.empresa%></div>
+                            <div class="activities"><%=job.atividades%></div>
+                        </div>
+                        <% }) %>
                     </div>
                 </div>
 

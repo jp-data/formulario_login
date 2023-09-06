@@ -31,11 +31,10 @@
                             <h2>Contato</h2>
                         </div>
                         <div id="contact">
-                            <input type="text" placeholder="Idade" name="age">
-                            <input type="text" placeholder="Estado" name="state">
-                            <input type="text" placeholder="Cidade" name="city">
-                            <input type="text" placeholder="Email" name="email">
-                            <input type="text" placeholder="Telefone(WhatsApp)" name="phone">
+                            <label>Idade: <input type="text" placeholder="<%= userLogin.idade %>" name="age"></label>
+                            <label>Estado: <input type="text" placeholder="<%= userLogin.estado %>" name="state"></label>
+                            <label>Cidade: <input type="text" placeholder="<%= userLogin.cidade %>" name="city"></label>
+                            <label>Telefone(Whatsapp):<input type="text" placeholder="<%= userLogin.telefone %>" name="phone"></label>
                         </div>
                     </div>
                     <div class="card-about-me">
@@ -78,14 +77,17 @@
                         <button id="add-experience3">Adicionar experiência</button>
                     </div>
                 </form>
-                <div id="experience3">
-                    <input type="text" placeholder="Nome da Empresa" name="">
-                    <input type="text" placeholder="Cargo" name="">
-                    <h4>Descreva as atividades</h4>
-                    <textarea id="about-me-experiences" type="text" name=""></textarea>
-                    <button id="save-experience3">Salvar</button>
-                    <button id="discard-experience3">Descartar</button>
-                </div>
+                <form action="/update3" method="POST" id="edit-experience-form">
+                    <div id="experience3">
+                        <input type="text" placeholder="Nome da Empresa" name="">
+                        <input type="text" placeholder="Cargo" name="">
+                        <h4>Descreva as atividades</h4>
+                        <textarea id="about-me-experiences" type="text" name=""></textarea>
+                        <button id="save-experience3">Salvar</button>
+                        <button id="discard-experience3">Descartar</button>
+                    </div>
+                </form>
+                
             </div>
 
 

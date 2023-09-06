@@ -102,6 +102,30 @@ const userController = {
         }
     },
 
+    experiencheThree: async (req, res) => {
+        try{
+            const user = req.session.user;
+
+            const userLogin = await User.findOne({ where: { email: user.email } });
+
+            const { companie3, ocupation3, job3 } = req.body;
+
+            await Experience.create(
+                {
+                    id_usuario: userLogin.id_usuario,
+                    empresa: companie3,
+                    cargo: ocupation3,
+                    atividades: job3
+                },
+                {
+                    where: { id_usuario: userLogin.id_usuario }
+                }
+            )
+        }catch(error){
+            console.log(error)
+        }
+    },
+
     //upload de foto e editor de perfil
     upload: async (req, res) => {
         try {
