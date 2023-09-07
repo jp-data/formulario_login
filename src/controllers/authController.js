@@ -87,9 +87,10 @@ const authController = {
 
             //encontra no DB
             const userLogin = await User.findOne({ where: {email: user.email} });
+            const jobs = await Experience.findAll({ where: {id_usuario: user.id} })
 
             //renderiza a página com o perfil do usuário na sessão
-            res.render('editPerfil', { user, userLogin });
+            res.render('editPerfil', { user, userLogin, jobs });
 
         } catch (error) {
             console.log(error)

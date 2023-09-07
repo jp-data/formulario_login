@@ -54,6 +54,7 @@ const userController = {
         const user = req.session.user;
 
         const userLogin = await User.findOne({ where: { email: user.email } });
+        const jobs = await Experience.findAll({ where: {id_usuario: user.id} })
 
         const { companie, ocupation, job } = req.body; 
 
@@ -68,11 +69,12 @@ const userController = {
                     where: { id_usuario: userLogin.id_usuario }
                 }
             )
+            res.redirect('/editPerfil');
         
         }catch(error) {
             console.log(error);
-            res.status(500).send("Erro ao atualizar dados do usuário")
         }
+       
     },
 
     experienceTwo: async(req, res) => {
