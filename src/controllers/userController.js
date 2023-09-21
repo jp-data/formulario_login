@@ -6,12 +6,12 @@ const { Experience } = require('../../database/models');
 const userController = {
 
     //renderiza a página de cadastro
-    renderFormCadastro: (req, res) => {
-        res.render('formCadastro', { error: null })
+    renderRegister: (req, res) => {
+        res.render('register', { error: null })
     },
 
     //cadastro
-    cadastro: async (req, res) => {
+    register: async (req, res) => {
         try {
             //pega os dados do usuário do corpo da req/
             const { email, name, senha } = req.body;
@@ -54,7 +54,6 @@ const userController = {
         const user = req.session.user;
 
         const userLogin = await User.findOne({ where: { email: user.email } });
-        const jobs = await Experience.findAll({ where: {id_usuario: user.id} })
 
         const { companie, ocupation, job } = req.body; 
 

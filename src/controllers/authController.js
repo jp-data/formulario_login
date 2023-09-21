@@ -71,7 +71,7 @@ const authController = {
             // const users = await User.findAll();
 
             //Renderiza a página restrita
-            res.render('areaRestrita', { userLogin, jobs } );
+            res.render('home', { userLogin, jobs } );
 
         } catch (error) {
             console.log(error)
