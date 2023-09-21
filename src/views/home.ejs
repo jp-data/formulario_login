@@ -27,7 +27,11 @@
                         <h1>
                             <%=userLogin.nome%>
                         </h1>
+                        <% if (userLogin.foto) { %>
                         <img class="avatar" src="/uploads/<%= userLogin.foto %>" alt="avatar-padrao">
+                        <% } else { %>
+                            <img class="avatar" src="../../public/uploads/avatarPadrao.png" alt="avatar">
+                        <% } %>
                     </div>
                     <div class="perfil-card-resume">
                         <div class="user-info" id="user-age"><br>Idade: <%=userLogin.idade%>
