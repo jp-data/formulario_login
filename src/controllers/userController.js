@@ -76,56 +76,56 @@ const userController = {
        
     },
 
-    experienceTwo: async(req, res) => {
-        try{
+    // experienceTwo: async(req, res) => {
+    //     try{
         
-        const user = req.session.user;
+    //     const user = req.session.user;
 
-        const userLogin = await User.findOne({ where: { email: user.email } });
+    //     const userLogin = await User.findOne({ where: { email: user.email } });
 
-        const { companie2, ocupation2, job2 } = req.body;
+    //     const { companie2, ocupation2, job2 } = req.body;
 
-            await Experience.create(
-                {
-                    id_usuario: userLogin.id_usuario,
-                    empresa: companie2,
-                    cargo: ocupation2,
-                    atividades: job2,
-                },
-                {
-                    where: { id_usuario: userLogin.id_usuario }
-                }
-            )
+    //         await Experience.create(
+    //             {
+    //                 id_usuario: userLogin.id_usuario,
+    //                 empresa: companie2,
+    //                 cargo: ocupation2,
+    //                 atividades: job2,
+    //             },
+    //             {
+    //                 where: { id_usuario: userLogin.id_usuario }
+    //             }
+    //         )
         
-        }catch(error) {
-            console.log(error);
-            res.status(500).send("Erro ao atualizar dados do usuário")
-        }
-    },
+    //     }catch(error) {
+    //         console.log(error);
+    //         res.status(500).send("Erro ao atualizar dados do usuário")
+    //     }
+    // },
 
-    experiencheThree: async (req, res) => {
-        try{
-            const user = req.session.user;
+    // experiencheThree: async (req, res) => {
+    //     try{
+    //         const user = req.session.user;
 
-            const userLogin = await User.findOne({ where: { email: user.email } });
+    //         const userLogin = await User.findOne({ where: { email: user.email } });
 
-            const { companie3, ocupation3, job3 } = req.body;
+    //         const { companie3, ocupation3, job3 } = req.body;
 
-            await Experience.create(
-                {
-                    id_usuario: userLogin.id_usuario,
-                    empresa: companie3,
-                    cargo: ocupation3,
-                    atividades: job3
-                },
-                {
-                    where: { id_usuario: userLogin.id_usuario }
-                }
-            )
-        }catch(error){
-            console.log(error)
-        }
-    },
+    //         await Experience.create(
+    //             {
+    //                 id_usuario: userLogin.id_usuario,
+    //                 empresa: companie3,
+    //                 cargo: ocupation3,
+    //                 atividades: job3
+    //             },
+    //             {
+    //                 where: { id_usuario: userLogin.id_usuario }
+    //             }
+    //         )
+    //     }catch(error){
+    //         console.log(error)
+    //     }
+    // },
 
     //upload de foto e editor de perfil
     upload: async (req, res) => {

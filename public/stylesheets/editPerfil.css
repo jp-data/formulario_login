@@ -125,18 +125,42 @@ h2 {
   height: 85vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
 }
 
-#experiences h2 { 
-  align-self: center;
-  margin-top: -10px;
+#header-experience {
+  width: 90%;
+  height: 20vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 8px;
 }
 
+#header-experience button { 
+  height: 30px;
+  background-color: white;
+  border: none;
+}
 
+#header-experience button i {
+  font-size: 28px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+} 
+
+#header-experience button i:hover {
+  font-size: 28px;
+  background-color: #bef2fe;
+} 
+
+
+#header-experience p {
+  font-size: 20px;
+}
 
 #about-me-experiences {
   width: 80%;
@@ -164,19 +188,46 @@ button {
   padding-bottom: 2px;
 }
 
-#experience1, #experience2 {
-  width: 80%;
-  /* background-color: white; */
+#experiences input {
+  width: 35%;
+  height: 3vh;
 }
 
-#save-experience, #discard-experience1 ,  #discard-experience2, #discard-experience3   {
-  width: 12%;
+#buttons-save-discard button { 
+  height: 27px;
+  background-color: white;
+  border: none;
 }
 
-#add-experience2 {
-  width: 25%;
+#buttons-save-discard button i { 
+  font-size: 28px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-/* #experience2, #experience3 {
-  visibility: hidden;
-} */
+#discard-experience1 {
+  margin-left: 8px;
+}
+
+#save-experience1 i:hover {
+  font-size: 28px;
+  background-color: #bef2fe;
+} 
+
+  #discard-experience1 i:hover {
+  font-size: 28px;
+  background-color: #db7c6c;
+} 
+
+#experience1 {
+  width: 70%;
+  height: 30vh;
+  border: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  align-items: center;
+  padding: 8px;
+  align-self: flex-start;
+  margin-left: 25px;
+}
+
