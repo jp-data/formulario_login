@@ -59,13 +59,20 @@
                     <div id="experiences">
                         
                         <h3>Experiências:</h3>
-                        <% jobs.map( job => { %>
-                        <div id="experience1">
-                            <div class="ocupation"><%=job.cargo%></div>
-                            <div class="companie"><%=job.empresa%></div>
-                            <div class="activities"><%=job.atividades%></div>
-                        </div>
-                        <% }) %>
+                        <% if (!jobs || jobs.length === 0) { %>
+                            <div id="no-experience">
+                                <h4>Nenhuma experiência cadastrada</h4>
+                            </div>
+                        <% } else { %>
+                            <% jobs.forEach((job, index) => { %>
+                                <div class="experience" id="experience<%= index %>">
+                                    <div class="occupation"><%= job.cargo %></div>
+                                    <div class="company"><%= job.empresa %></div>
+                                    <div class="activities"><%= job.atividades %></div>
+                                </div>
+                            <% }) %>
+                        <% } %>
+                        
                     </div>
                 </div>
 
