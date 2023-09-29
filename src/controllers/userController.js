@@ -54,6 +54,7 @@ const userController = {
         const user = req.session.user;
 
         const userLogin = await User.findOne({ where: { email: user.email } });
+        
 
         const { companie, ocupation, job } = req.body; 
 

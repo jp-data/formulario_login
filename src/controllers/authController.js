@@ -62,6 +62,8 @@ const authController = {
 
             //const para ficha de usuário
             const userLogin = await User.findOne({ where: {email: user.email} });
+            const userPhoto = userLogin.foto;
+            
 
             //traz as experiencias do usuário cadastradas
             const jobs = await Experience.findAll({ where: {id_usuario: user.id} })
@@ -71,7 +73,7 @@ const authController = {
             // const users = await User.findAll();
 
             //Renderiza a página restrita
-            res.render('home', { userLogin, jobs } );
+            res.render('home', { userLogin, jobs, userPhoto } );
 
         } catch (error) {
             console.log(error)
