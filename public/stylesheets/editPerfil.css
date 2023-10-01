@@ -238,6 +238,7 @@ button {
   padding: 8px;
   align-self: flex-start;
   margin-left: 25px;
+  visibility: hidden;
 }
 
 #about-experience1, 

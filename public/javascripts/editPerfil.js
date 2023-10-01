@@ -1,26 +1,20 @@
 // adicionar caixas de experiência
-const experience2 = document.getElementById('experience2');
-const btn2 = document.querySelector('#add-experience2')
-const experience3 = document.getElementById('experience3')
-const btn3 = document.querySelector('#add-experience3') 
 
-btn2.addEventListener('click', (e) => {
+const btn = document.getElementById('add-experience');
+const experience1 = document.getElementById('experience1');
+const btnDiscardEx1 = document.querySelector('#discard-experience1')
+
+
+btn.addEventListener('click', (e) => {
     e.preventDefault()
-    experience2.style.visibility = 'visible'
+    btn.disabled = true
+    experience1.style.visibility = 'visible'
+    
 });
 
-btn3.addEventListener('click', (e) => {
+btnDiscardEx1.addEventListener('click', (e) => {
     e.preventDefault()
-    experience3.style.visibility = 'visible'
-});
-
-// editar dados de contato
-const experienceView = document.getElementById('contact-view');
-const experienceEdit = document.getElementById('contact');
-const btn4 = document.querySelector('#edit-contact');
-
-btn4.addEventListener('click', (e) => {
-    e.preventDefault()
-    experienceView.style.visibility = 'hidden'
-    experienceEdit.style.visibility = 'visible'
+    btn.disabled = false
+    experience1.style.visibility = 'hidden'
+    
 });
