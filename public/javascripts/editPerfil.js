@@ -6,6 +6,10 @@ const experience1 = document.getElementById('experience1');
 const btnDiscardEx1 = document.querySelector('#discard-experience1')
 const btnSaveExperience = document.getElementById('save-experience1')
 
+//eventos - experiência 2
+
+const experience2 = document.getElementById('experience2')
+
 btn.addEventListener('click', (e) => {
     e.preventDefault()
     btn.disabled = true
@@ -31,16 +35,13 @@ btnSaveExperience.addEventListener('click', (e) => {
     document.getElementById('save-experience1').title = 'Editar'
     document.getElementById('discard-experience1').innerHTML = `<i class="ph ph-trash"></i>`
     document.getElementById('discard-experience1').title = 'Excluir'
-    // document.getElementById('add-experience1').id = 'add-experience2'
-})
 
-//eventos - experiência 2
-const btn2 = document.getElementById('add-experience');
-const experience2 = document.getElementById('experience2')
+    let btn2 = document.getElementById('add-experience1');
+    btn2.id = 'add-experience2'
 
-btn2.addEventListener('click', (e) => {
-    e.preventDefault()
-    experience2.style.visibility = 'visible'
-
+    btn2.addEventListener('click', (e) => {
+        e.preventDefault
+        experience2.style.visibility = 'visible'
+    })
 })
 
