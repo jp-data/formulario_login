@@ -27,10 +27,10 @@
                         <h1>
                             <%=userLogin.nome%>
                         </h1>
-                        <% if (userPhoto || userPhoto.length > 0) { %>
-                            <img class="avatar" src="/uploads/<%= userLogin.foto %>">
+                        <% if (!userPhoto) { %>
+                            <img class="avatar" src="/uploads/avatar-padrao.jpg">
                         <% } else { %>
-                            <img class="avatar" src="/uploads/avatar-Padrao.png">
+                            <img class="avatar" src="/uploads/<%= userLogin.foto %>">
                         <% } %>
                     </div>
                     <div class="perfil-card-resume">

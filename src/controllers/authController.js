@@ -62,7 +62,8 @@ const authController = {
 
             //const para ficha de usuário
             const userLogin = await User.findOne({ where: {email: user.email} });
-            const userPhoto = userLogin.foto;
+            const userPhoto = user.foto;
+           
             
 
             //traz as experiencias do usuário cadastradas
@@ -90,9 +91,10 @@ const authController = {
             //encontra no DB
             const userLogin = await User.findOne({ where: {email: user.email} });
             const jobs = await Experience.findAll({ where: {id_usuario: user.id} })
+            const userPhoto = user.foto;
 
             //renderiza a página com o perfil do usuário na sessão
-            res.render('editPerfil', { user, userLogin, jobs });
+            res.render('editPerfil', { user, userLogin, jobs, userPhoto });
 
         } catch (error) {
             console.log(error)

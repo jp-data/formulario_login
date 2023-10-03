@@ -25,12 +25,12 @@
                         <div id="photo">
                             
                             <h2>Escolha uma foto</h2>
-                            <% if (userLogin.foto) { %>
+                            <% if (userPhoto) { %>
                             <img class="avatar" src="/uploads/<%= userLogin.foto %>" alt="avatar">
                            
                             
                             <% } else { %>
-                            <img class="avatar" src="/public/uploads/avatarPadrao.png" alt="avatar">
+                            <img class="avatar" src="/uploads/avatar-padrao.jpg" alt="avatar">
                             <% } %>
                             <input type="file" name="avatar">
                         </div>

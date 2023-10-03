@@ -54,9 +54,9 @@ body {
 
 .card-photo img {
     border-radius: 45%;
-    width: 40%;
-    height: 20vh;
-    align-self: center;
+    width: 60%;
+    height: 23vh;
+    align-self: flex-start;
 }
 
 .perfil-card-datas {
