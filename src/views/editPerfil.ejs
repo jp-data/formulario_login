@@ -21,44 +21,35 @@
 
             <div class="edit-profile">
                 <form action="/upload" method="POST" id="edit-profile-form" enctype="multipart/form-data">
-                    <div class="card-photo-contact">
                         <div id="photo">
-                            
                             <h2>Escolha uma foto</h2>
                             <% if (userPhoto) { %>
                             <img class="avatar" src="/uploads/<%= userLogin.foto %>" alt="avatar">
-                           
-                            
                             <% } else { %>
                             <img class="avatar" src="/uploads/avatar-padrao.jpg" alt="avatar">
                             <% } %>
                             <input type="file" name="avatar">
                         </div>
-                        <div id="contact-text">
-                            <h2>Contato</h2>
-                        </div>
                         <div id="contact">
-                            <label>Idade: <input type="text" placeholder="<%= userLogin.idade %>" name="age"></label>
-                            <label>Estado: <input type="text" placeholder="<%= userLogin.estado %>"
-                                    name="state"></label>
-                            <label>Cidade: <input type="text" placeholder="<%= userLogin.cidade %>" name="city"></label>
-                            <label>Telefone(Whatsapp):<input type="text" placeholder="<%= userLogin.telefone %>"
+                            <p>Contato</p>
+                            <b>
+                                <label>Idade: <input type="text" placeholder="<%= userLogin.idade %>" name="age"></label>
+                                <label>Estado: <input type="text" placeholder="<%= userLogin.estado %>" name="state"></label>
+                                <label>Cidade: <input type="text" placeholder="<%= userLogin.cidade %>" name="city"></label>
+                                <label>Telefone(Whatsapp):<input type="text" placeholder="<%= userLogin.telefone %>"
                                     name="phone"></label>
+                            </b>
+                            
                         </div>
-                    </div>
-                    <div class="card-about-me">
                         <div id="about-me">
                             <label for="about-me">
                                 <h2>Sobre mim</h2>
-                                <b>
-                                    <p>Fale um pouco sobre você, suas experiências e objetivos de carreira.</p>
-                                </b>
+                                <b><p>Fale um pouco sobre você, suas experiências e objetivos de carreira.</p></b>
                             </label>
                             <textarea id="about-me-text" type="text"
                                 name="aboutMe"><%= userLogin.descricao %></textarea>
                         </div>
                         <button type="submit">Salvar</button>
-                    </div>
                 </form>
             </div>
             <div class="edit-experience">
