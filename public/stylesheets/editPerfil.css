@@ -51,8 +51,17 @@ body {
   justify-content: flex-start;
   width: 80%;
   height: 25vh;
-
   background-color: #F0F8FF;
+}
+
+#button-edit {
+  width: 10%;
+}
+
+#labels-contact {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
 }
 
 #contact p {
@@ -212,6 +221,10 @@ button {
   font-size: 28px;
   background-color: #db7c6c;
 } 
+
+#edit-experience {
+  align-self: flex-end;
+}
 
 #experience1, #experience2, #experience3 {
   width: 70%;

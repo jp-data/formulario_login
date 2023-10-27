@@ -31,17 +31,27 @@
                     </div>
                     <div id="contact">
                         <p>Contato</p>
-                        <label>Idade:
-                            <input type="text" placeholder="<%= userLogin.idade %>" name="age" /></label>
-                        <label>Estado:
-                            <input type="text" placeholder="<%= userLogin.estado %>" name="state" /></label>
-                        <label>Cidade:
-                            <input type="text" placeholder="<%= userLogin.cidade %>" name="city" /></label>
-                        <label>Telefone(Whatsapp):<input type="text" placeholder="<%= userLogin.telefone %>"
-                                name="phone" /></label>
+                        <div id="labels-contact">
+                            <label>Idade:
+                                <input type="text" placeholder="<%= userLogin.idade %>" name="age" /></label>
+                            <label>Estado:
+                                <input type="text" placeholder="<%= userLogin.estado %>" name="state" /></label>
+                            <label>Cidade:
+                                <input type="text" placeholder="<%= userLogin.cidade %>" name="city" /></label>
+                            <label>Telefone(Whatsapp):<input type="text" placeholder="<%= userLogin.telefone %>"
+                                    name="phone" /></label>
+                        </div>  
+                        <div id="button-edit">
+                            <button title="Editar" id="edit-contact">
+                                <i class="ph ph-pen"></i>
+                            </button>
+                        </div>
                     </div>
                     <div id="about-me">
                         <h2>Sobre mim</h2>
+                        <button title="Editar" id="edit-experience">
+                            <i class="ph ph-pen"></i>
+                        </button>
                         <p>Fale um pouco sobre você e seus objetivos de carreira.</p>
                         <textarea id="about-me-text" type="text" name="aboutMe"><%= userLogin.descricao %></textarea>
                     </div>
